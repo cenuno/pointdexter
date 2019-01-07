@@ -1,0 +1,13 @@
+citHeader("To cite pointdexter in publications use:")
+
+citEntry(entry = "Article",
+  title        = "Label longitudinal and latitudinal coordinates located inside a polygon with {pointdexter}",
+  author       = personList(as.person("Cristian E. Nuno"),
+  year         = "2019",
+  url          = "https://github.com/cenuno/pointdexter",
+
+  textVersion  =
+  paste("Cristian E. Nuno (2019).",
+        "Label longitudinal and latitudinal coordinates located inside a polygon with pointdexter",
+        "URL https://github.com/cenuno/pointdexter.")
+)
