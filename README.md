@@ -27,7 +27,12 @@ By default, `pointdexter` only installs the [`sp`](https://www.rdocumentation.or
 Install developmental versions of `pointdexter` on GitHub:
 
 ```R
+# install the pointdexter package without the vignette
 devtools::install_github("cenuno/pointdexter")
+
+# note: if you choose to build the vignettes when you install
+#       the 'sf' package will be installed
+devtools::install_github("cenuno/pointdexter", build_vignettes = TRUE)
 ```
 
 ## Resources
