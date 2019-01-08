@@ -30,8 +30,7 @@ data("city_boundary_spdf")
 
 # obtain boundaries for the City of Chicago ----
 boundaries <-
-  GetPolygonBoundaries(my.polygon = community_areas_sf
-                       , labels = community_areas_sf$community)
+  GetPolygonBoundaries(my.polygon = city_boundary_spdf)
 
 
 ## SpatialPolygonsDataFrame, multipolygon polygon example ## -----
