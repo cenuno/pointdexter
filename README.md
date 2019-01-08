@@ -1,5 +1,9 @@
 # pointdexter
 
+<!-- badges: start -->
+[![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter)
+<!-- badges: end -->
+
 The package labels coordinate pairs located inside a polygon.
 
 ## Description
