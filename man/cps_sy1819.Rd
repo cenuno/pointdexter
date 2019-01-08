@@ -82,6 +82,7 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{graduation_rate_mean}}{the mean high school graduation rate is 78.2 percent}
     \item{\code{overall_rating}}{\href{https://cps.edu/Performance/Documents/SQRP_Overview.pdf}{school quality rating policy (SQRP)} rating, with Level 1+ being the highest performance and Level 3 being the lowest}
     \item{\code{rating_status}}{a \href{https://cps.edu/Performance/Documents/SQRP_Overview.pdf}{school’s status} determines who has decision-making power at the school level}
+    \item{\code{rating_statement}}{text description of the value in \code{overall_rating}}
     \item{\code{classification_type}}{12 different types of school admission processess and curriculum}
     \item{\code{classification_description}}{text description of \code{classification_type}}
     \item{\code{school_year}}{School Year 2018-2019}
