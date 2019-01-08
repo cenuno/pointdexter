@@ -148,8 +148,12 @@ cps_sy1819$closed_for_enrollment_date <- NULL
 # cast school_id as a character vector
 cps_sy1819$school_id <- as.character(cps_sy1819$school_id)
 
-# ensure summary is encoded as UTF-8
-Encoding(cps_sy1819$summary) <- "UTF-8"
+# ensure a few text columns are encoded as UTF-8
+for (i in c("long_name", "summary", "administrator"
+            , "statistics_description", "demographic_description"
+            , "rating_statement", "classification_description")) {
+  Encoding(cps_sy1819[[i]]) <- "UTF-8"
+}
 
 # export all objects as .rda files in data/ -----
 save(community_areas_spdf
