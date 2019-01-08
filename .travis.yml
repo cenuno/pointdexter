@@ -1,11 +1,18 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
+# following the documentation found in ropensci/MODIStsp
 
 language: R
+sudo: require
 warnings_are_errors: true
 cache: packages
 
 before_install:
  - sudo apt-get install libudunits2-dev
- - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable
+ - sudo add-apt-repository ppa:ubuntugis/ubuntugis-unstable --yes
  - sudo apt-get update
- - sudo apt-get install libgdal-dev
+ - sudo apt-get install -y libgdal-dev
+ - sudo apt-get install -y gdal-bin
+
+apt_packages:
+- libgdal-dev
+- libudunits2-dev
