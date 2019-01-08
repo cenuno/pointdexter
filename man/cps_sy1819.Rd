@@ -43,22 +43,23 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{student_count_low_income}}{number of low income students}
     \item{\code{student_count_special_ed}}{total number of students}
     \item{\code{student_count_english_learners}}{number of low income students}
-    \item{\code{student_count_black}}{total number of students}
-    \item{\code{student_count_hispanic}}{number of low income students}
-    \item{\code{student_count_white}}{total number of students}
-    \item{\code{student_count_asian}}{number of low income students}
-    \item{\code{student_count_native_american}}{total number of students}
-    \item{\code{student_count_other_ethnicity}}{number of low income students}
-    \item{\code{student_count_asian_pacific_islander}}{total number of students}
-    \item{\code{student_count_multi}}{number of low income students}
-    \item{\code{student_count_hawaiian_pacific_islander}}{total number of students}
-    \item{\code{student_count_ethnicity_not_available}}{number of low income students}
+    \item{\code{student_count_black}}{total number of African-American students}
+    \item{\code{student_count_hispanic}}{total number of Hispanic students}
+    \item{\code{student_count_white}}{total number of White students}
+    \item{\code{student_count_asian}}{total number of Asian students}
+    \item{\code{student_count_native_american}}{total number of Native-American students}
+    \item{\code{student_count_other_ethnicity}}{total number of students whose race/ethnicity is 'Other'}
+    \item{\code{student_count_asian_pacific_islander}}{total number of Asian/Pacific-Islander students}
+    \item{\code{student_count_multi}}{total number of multi-racial/ethnic students}
+    \item{\code{student_count_hawaiian_pacific_islander}}{total number of Hawaiian/Pacific-Islander students}
+    \item{\code{student_count_ethnicity_not_available}}{total number of students whose ethnicity was not available}
     \item{\code{statistics_description}}{text description about the total student count, percent low income, percent diverse learners, and percent limited english learners}
     \item{\code{demographic_description}}{text description stating both the largest and second largest racial/ethnic demographic group}
     \item{\code{dress_code}}{T/F if school institutes a dress code}
     \item{\code{prek_school_day}}{pre-k school day description}
     \item{\code{kindergarten_school_day}}{kindergarten school days are all full days}
     \item{\code{school_hours}}{start and end time of school day (not a datetime)}
+    \item{\code{freshman_start_end_time}}{start and end time of for freshman (not a datetime)}
     \item{\code{after_school_hours}}{start and end time of after school hours (not a datetime)}
     \item{\code{earliest_drop_off_time}}{earliest drop off time (not a datetime)}
     \item{\code{classroom_languages}}{non-English languages spoken in classroom, separated by a comma}
