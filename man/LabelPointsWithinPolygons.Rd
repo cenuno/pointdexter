@@ -24,8 +24,8 @@ If \code{polygon.boundaries} is a coordinate pair matrix, a logical vector will 
 ## SpatialPolygonsDataFrame, one polygon example ## -----
 
 # load necessary data ----
-data(city_boundary_spdf)
-data(cps_sy1819)
+data("city_boundary_spdf")
+data("cps_sy1819")
 
 # obtain boundaries for the City of Chicago ----
 boundaries <-
@@ -40,8 +40,8 @@ cps_sy1819$citywide <-
 ## SpatialPolygonsDataFrame, multipolygon polygon example ## -----
 
 # load necessary data ----
-data(community_areas_spdf)
-data(cps_sy1819)
+data("community_areas_spdf")
+data("cps_sy1819")
 
 # obtain boundaries for each of the 77 Chicago community areas ----
 boundaries <-
@@ -56,9 +56,12 @@ cps_sy1819$community <-
 
 ## sf, one polygon example ## -----
 
+# load necessary package ----
+library(sf)
+
 # load necessary data ----
-data(city_boundary_sf)
-data(cps_sy1819)
+data("city_boundary_sf")
+data("cps_sy1819")
 
 # obtain boundaries for the City of Chicago ----
 boundaries <-
@@ -72,9 +75,12 @@ cps_sy1819$citywide <-
 
 ## sf, multipolygon polygon example ## -----
 
+# load necessary package ----
+library(sf)
+
 # load necessary data ----
-data(community_areas_sf)
-data(cps_sy1819)
+data("community_areas_sf")
+data("cps_sy1819")
 
 # obtain boundaries for each of the 77 Chicago community areas ----
 boundaries <-

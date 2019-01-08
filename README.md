@@ -23,7 +23,7 @@ By default, `pointdexter` only installs the [`sp`](https://www.rdocumentation.or
 Install developmental versions of `pointdexter` on GitHub:
 
 ```R
-devtools::install_github("cenuno/pointdexter", build_vignettes = TRUE)
+devtools::install_github("cenuno/pointdexter")
 ```
 
 ## Resources
