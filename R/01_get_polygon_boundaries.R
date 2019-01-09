@@ -31,7 +31,8 @@ GetPolygonBoundaries <- function(my.polygon
   }
 
   # ensure that if my.polygon is an sf object, that the sf package is installed -----
-  if (requireNamespace("sf", quietly = TRUE) == FALSE) {
+  if (class(my.polygon)[1] == "sf" &
+      requireNamespace("sf", quietly = TRUE) == FALSE) {
     stop("my.polygon is of class sf yet you do not have the sf package.\n\nEither install the sf package - install.packages('sf') - or input a SpatialPolygonsDataFrame object into my.polygon.")
   }
 
