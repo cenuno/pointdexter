@@ -46,7 +46,7 @@ Usage
 
 ### Build-in Data
 
-`pointdexter` comes with built-in data to help you label points in polygons:
+`pointdexter` comes with built-in data - entirely due to the awesome and accessible [Chicago Data Portal](https://data.cityofchicago.org/) - to help you label points in polygons:
 
 -   Chicago Public Schools (CPS) - [School Profile Information, School Year (SY) 2018-2019](https://data.cityofchicago.org/Education/Chicago-Public-Schools-School-Profile-Information-/kh4r-387c)
 
