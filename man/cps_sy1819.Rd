@@ -83,7 +83,7 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{overall_rating}}{\href{https://cps.edu/Performance/Documents/SQRP_Overview.pdf}{school quality rating policy (SQRP)} rating, with Level 1+ being the highest performance and Level 3 being the lowest}
     \item{\code{rating_status}}{a \href{https://cps.edu/Performance/Documents/SQRP_Overview.pdf}{school’s status} determines who has decision-making power at the school level}
     \item{\code{rating_statement}}{text description of the value in \code{overall_rating}}
-    \item{\code{classification_type}}{12 different types of school admission processess and curriculum}
+    \item{\code{classification_type}}{12 different types of school admission processes and curriculum}
     \item{\code{classification_description}}{text description of \code{classification_type}}
     \item{\code{school_year}}{School Year 2018-2019}
     \item{\code{network}}{District-run schools in CPS are organized into geographic \href{https://cpsparentu.org/apps/news/show_news.jsp?REC_ID=516317&id=1}{networks}, which provide administrative support, strategic direction, and leadership development to the schools within each network}

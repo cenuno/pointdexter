@@ -11,7 +11,7 @@ LabelPointsWithinPolygons(lng, lat, polygon.boundaries)
 }
 \arguments{
   \item{lng}{A numeric vector of non-NA longitudinal points.}
-  \item{lat}{A numeric vector of non-NA latiduinal points.}
+  \item{lat}{A numeric vector of non-NA latitudinal points.}
   \item{polygon.boundaries}{Either a coordinate pair matrix or a named list of coordinate pair matrices obtained from \code{\link{GetPolygonBoundaries}}.}
 }
 \details{

@@ -34,7 +34,7 @@ This SpatialPolygonsDataFrame comes from the City of Chicago Data Portal, \href{
 Boundaries - Community Areas (current)}. The file was last updated on December 18, 2018.
 }
 \references{
-The following were helpful in better understanding SpatialPolygonsDataFrames:
+The following were helpful in better understanding \code{SpatialPolygonsDataFrame}'s:
 
   \describe{
     \item{\code{sp}}{\href{https://www.rdocumentation.org/packages/sp/versions/1.2-5}{sp} documentation}

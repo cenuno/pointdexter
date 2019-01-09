@@ -121,7 +121,7 @@ kable(lapply(community.area.boundaries[c("AUSTIN", "WEST ELSDON")], head)
       , col.names = c("long", "lat"))
 ```
 
-## `LabelPointsWithinPolygons()` identifies which longitudinal and latitudinal points lie within the polyon(s)
+## `LabelPointsWithinPolygons()` identifies which longitudinal and latitudinal points lie within the polygon(s)
 
 The first two arguments of `LabelPointsWithinPolygons()` are the longitude and latitude columns that create your coordinate pairs of interest. The final argument - `polygon.boundaries` is the object you created from `GetPolygonBoundaries()`.
 
