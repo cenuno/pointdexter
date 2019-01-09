@@ -1,5 +1,5 @@
 # R for travis: see documentation at https://docs.travis-ci.com/user/languages/r
-# following the documentation found in ropensci/MODIStsp
+# following the .travis.yml file found in https://github.com/ropensci/MODIStsp/blob/master/.travis.yml
 
 language: R
 sudo: require
