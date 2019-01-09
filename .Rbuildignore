@@ -1,6 +1,9 @@
+^README\.Rmd$
+^\.travis\.yml$
 # package infrastructure
 ^data-raw$
 ^pointdexter\.Rproj$
 ^\.Rproj\.user$
 ^.*\.Rproj$
 README.md
+cran-comments.md
