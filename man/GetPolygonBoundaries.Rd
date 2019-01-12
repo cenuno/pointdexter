@@ -10,7 +10,7 @@ Obtains the boundaries of the polygon(s)
 GetPolygonBoundaries(my.polygon, labels)
 }
 \arguments{
-  \item{my.polygon}{Either a SpatialPolygonsDataFrame data or a sf object. See \href{https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygonsDataFrame-class}{\code{?sp::`SpatialPolygonsDataFrame-class`}} or \href{https://cran.r-project.org/web/packages/sf/index.html}{\code{help(package = "sf")}} for more help.}
+  \item{my.polygon}{Either a SpatialPolygonsDataFrame data or a sf object. See \href{https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygonsDataFrame-class}{\code{?sp::`SpatialPolygonsDataFrame-class`}} or \href{https://www.rdocumentation.org/packages/sf/versions/0.7-2}{\code{help(package = "sf")}} for more help.}
   \item{labels}{A character vector of polygon boundary labels used to name each matrix}
 }
 \details{

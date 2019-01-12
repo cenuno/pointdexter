@@ -10,7 +10,7 @@ Description: Labels longitudinal and latitudinal coordinates located inside a po
     For a singular polygon, the label is a logical vector of TRUE and FALSE values. For multiple polygons, the label is a character vector based on the names of each polygon. 
     The package is designed to work with both sf and SpatialPolygonsDataFrame objects.
 URL: https://github.com/cenuno/pointdexter
-License: GPL-3 + file LICENSE
+License: GPL-3 +
 Encoding: UTF-8
 Depends: R (>= 3.3.0)
 Imports: sp (>= 1.3-1), splancs (>= 2.01-40)
