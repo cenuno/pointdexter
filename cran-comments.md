@@ -1,6 +1,13 @@
 pointdexter 0.1.0
 =================
 
+## Resubmission
+This is a resubmission. In this version I have:
+
+* Removed GPL-3 LICENSE file and mention of it in the DESCRIPTION file.
+
+* Replaced sf URLs.
+
 ## Test environments
 * local: macOS High Sierra 10.13.6 install, R 3.5.2
 * travis-ci: Ubuntu 14.04.5 LTS, R 3.5.2

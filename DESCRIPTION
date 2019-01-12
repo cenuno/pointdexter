@@ -1,7 +1,7 @@
 Package: pointdexter
 Type: Package
 Title: Labels Points Inside Polygons
-Date: 2019-01-10
+Date: 2019-01-11
 Version: 0.1.0
 Authors@R: person("Cristian E.", "Nuno", email = "cenuno@syr.edu",
                   role = c("aut", "cre"))
