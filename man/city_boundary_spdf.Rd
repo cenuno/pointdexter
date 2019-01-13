@@ -21,16 +21,6 @@ A SpatialPolygonsDataFrame of the city boundary of Chicago that can only be used
 This SpatialPolygonsDataFrame comes from the City of Chicago Data Portal, \href{https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk}{
 Boundaries - City}. The file was last updated on June 30, 2017.
 }
-\references{
-The following were helpful in better understanding SpatialPolygonsDataFrames:
-
-  \describe{
-    \item{\code{sp}}{\href{https://www.rdocumentation.org/packages/sp/versions/1.2-5}{sp} documentation}
-    \item{\code{PROJ.4}}{\href{https://github.com/OSGeo/proj.4}{PROJ.4} Cartographic Projections Library}
-    \item{\code{GDAL}}{\href{http://www.gdal.org/}{GDAL} - Geospatial Data Abstraction Library}
-    \item{\code{Jeffrey Evans}}{\href{http://evansmurphy.wixsite.com/evansspatial}{Jeffrey Evans'} comprehensive \href{https://gis.stackexchange.com/questions/87789/spatialpointsdataframe-properties-and-operators-in-r}{answer} to better understand the properties and operators of spatial data}
-}
-}
 \examples{
 # load necessary packages ----
 library(sp)
@@ -43,5 +33,10 @@ plot(city_boundary_spdf
      , main = "City of Chicago boundary"
      , col = "gray85"
      , border = "dodgerblue4")
+}
+\seealso{
+\itemize{
+\item \code{?pointdexter::city_boundary_sf}
+}
 }
 \keyword{datasets}

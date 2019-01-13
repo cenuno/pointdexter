@@ -5,7 +5,7 @@
 Chicago's 77 community areas
 }
 \description{
-A simple feature of the 77 community area boundaries in Chicago.
+A simple feature of the 77 community area boundaries in Chicago that can only be used with the \href{https://r-spatial.github.io/sf/}{\code{sf}} package.
 }
 \usage{data("community_areas_sf")}
 \format{
@@ -17,9 +17,10 @@ A simple feature of the 77 community area boundaries in Chicago.
   }
 }
 \details{
-All other columns were dropped:
+The following is \code{sf} installation advice from \href{https://nycgeo.mattherman.info/}{Matt Herman}:
 
-\code{shape_area}, \code{perimeter}, \code{area_num_1}, \code{comarea_id}, \code{comarea}, \code{shape_len}, and \code{area}.
+
+Depending on your operating system and available libraries, \code{sf} can be tricky to install the first time. The \href{https://r-spatial.github.io/sf/index.html#installing}{\code{sf} website} is a good place to start if you're having trouble. If you're using macOS, \href{https://medium.com/@jinwujour/mapping-with-r-on-mac-installation-8c8ef997c6c2}{this is a good guide} to installing the required libraries.
 }
 \source{
 This data frame comes from the City of Chicago Data Portal, \href{https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6}{
@@ -29,6 +30,7 @@ Boundaries - Community Areas (current)}. The file was last updated on December 1
 \href{https://r-spatial.github.io/sf/}{\code{sf}} documentation has helpful information on how to work with \code{sf} objects.
 }
 \examples{
+\dontrun{
 # load necessary packages ----
 library(sf)
 
@@ -40,5 +42,11 @@ plot(community_areas_sf$geometry
      , main = "Chicago's 77 community areas"
      , col = "gray85"
      , border = "dodgerblue4")
+     }
+}
+\seealso{
+\itemize{
+\item \code{?pointdexter::community_areas_spdf}
+}
 }
 \keyword{datasets}

@@ -19,9 +19,6 @@ GetPolygonBoundaries(my.polygon, labels)
 \value{
 If \code{my.polygon} is of length 1, a matrix of coordinate pairs will be returned; otherwise, a list of labeled matrices, with each matrix representing the coordinate pairs that make the boundary of each particular polygon in \code{my.polygon}.
 }
-\note{
-This \href{https://github.com/r-spatial/sf/wiki}{wiki-page} was useful in helping me migrate from \code{sp}, \code{rgeos}, and \code{rgdal} to \code{sf}.
-}
 \examples{
 ## SpatialPolygonsDataFrame, one polygon example ## -----
 
@@ -42,7 +39,7 @@ data("community_areas_spdf")
 boundaries <-
   GetPolygonBoundaries(my.polygon = community_areas_spdf
                        , labels = community_areas_spdf$community)
-
+\dontrun{
 ## sf, one polygon example ## -----
 
 # load necessary package ----
@@ -53,8 +50,10 @@ data("city_boundary_sf")
 
 # obtain boundaries for the City of Chicago ----
 boundaries <- GetPolygonBoundaries(my.polygon = city_boundary_sf)
+}
 
-## sf, multipolygon polygon example ## -----
+\dontrun{
+## sf, multipolygon example ## -----
 
 # load necessary package ----
 library(sf)
@@ -66,4 +65,13 @@ data("community_areas_sf")
 boundaries <-
   GetPolygonBoundaries(my.polygon = community_areas_sf
                        , labels = community_areas_sf$community)
+}
+}
+\seealso{
+\itemize{
+\item \code{?pointdexter::city_boundary_spdf}
+\item \code{?pointdexter::city_boundary_sf}
+\item \code{?pointdexter::community_areas_spdf}
+\item \code{?pointdexter::community_areas_sf}
+}
 }

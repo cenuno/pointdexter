@@ -5,7 +5,7 @@
 A SpatialPolygonsDataFrame of Chicago's 77 community areas
 }
 \description{
-77 community area boundaries in Chicago that only be used with the \href{https://www.rdocumentation.org/packages/sp/versions/1.3-1}{\code{sp}} and \href{https://www.rdocumentation.org/packages/rgdal/versions/1.3-6}{\code{rgdal}} packages.
+77 community area boundaries in Chicago that only be used with the \href{https://www.rdocumentation.org/packages/sp/versions/1.3-1}{\code{sp}} package.
 }
 \usage{data("community_areas_spdf")}
 \format{
@@ -24,24 +24,9 @@ A SpatialPolygonsDataFrame of Chicago's 77 community areas
   }
   }
 }
-\details{
-All other columns were dropped:
-
-\code{shape_area}, \code{perimeter}, \code{area_num_1}, \code{comarea_id}, \code{comarea}, \code{shape_len}, and \code{area}.
-}
 \source{
 This SpatialPolygonsDataFrame comes from the City of Chicago Data Portal, \href{https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6}{
 Boundaries - Community Areas (current)}. The file was last updated on December 18, 2018.
-}
-\references{
-The following were helpful in better understanding \code{SpatialPolygonsDataFrame}'s:
-
-  \describe{
-    \item{\code{sp}}{\href{https://www.rdocumentation.org/packages/sp/versions/1.2-5}{sp} documentation}
-    \item{\code{PROJ.4}}{\href{https://github.com/OSGeo/proj.4}{PROJ.4} Cartographic Projections Library}
-    \item{\code{GDAL}}{\href{http://www.gdal.org/}{GDAL} - Geospatial Data Abstraction Library}
-    \item{\code{Jeffrey Evans}}{\href{http://evansmurphy.wixsite.com/evansspatial}{Jeffrey Evans'} comprehensive \href{https://gis.stackexchange.com/questions/87789/spatialpointsdataframe-properties-and-operators-in-r}{answer} to better understand the properties and operators of spatial data}
-}
 }
 \examples{
 # load necessary packages ----
@@ -55,5 +40,10 @@ plot(community_areas_spdf
      , main = "Chicago's 77 community areas"
      , col = "gray85"
      , border = "dodgerblue4")
+}
+\seealso{
+\itemize{
+\item \code{?pointdexter::community_areas_sf}
+}
 }
 \keyword{datasets}

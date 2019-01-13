@@ -1,10 +1,22 @@
+# release infrastructure
 ^CRAN-RELEASE$
-^README\.Rmd$
 ^\.travis\.yml$
+
 # package infrastructure
+^docs$
 ^data-raw$
 ^pointdexter\.Rproj$
 ^\.Rproj\.user$
 ^.*\.Rproj$
+^README\.Rmd$
 README.md
+^README-.*\.png$
+^logo\.png$
+^base_logo\.png$
+
+
+# hosting infrastructure
+^.github$
 cran-comments.md
+^pkgdown$
+^_pkgdown\.yml$

@@ -2,7 +2,11 @@ pointdexter 0.1.0
 =================
 
 ## Resubmission
-This is a resubmission. In this version I have:
+This is a second resubmission. In this version I have:
+
+* Removed use of `sf` in the vignette.
+
+* `sf` examples in the `.Rd` files will no longer be run, courtesy of `\dontrun{}`.
 
 * Removed GPL-3 LICENSE file and mention of it in the DESCRIPTION file.
 

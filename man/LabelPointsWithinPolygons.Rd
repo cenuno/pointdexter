@@ -54,6 +54,7 @@ cps_sy1819$community <-
                             , lat = cps_sy1819$school_latitude
                             , polygon.boundaries = boundaries)
 
+\dontrun{
 ## sf, one polygon example ## -----
 
 # load necessary package ----
@@ -72,7 +73,9 @@ cps_sy1819$citywide <-
   LabelPointsWithinPolygons(lng = cps_sy1819$school_longitude
                             , lat = cps_sy1819$school_latitude
                             , polygon.boundaries = boundaries)
+                            }
 
+\dontrun{
 ## sf, multipolygon polygon example ## -----
 
 # load necessary package ----
@@ -92,8 +95,12 @@ boundaries <-
 cps_sy1819$community <-
   LabelPointsWithinPolygons(lng = cps_sy1819$school_longitude
                             , lat = cps_sy1819$school_latitude
-                            , polygon.boundaries = boundaries)
+, polygon.boundaries = boundaries)
+}
 }
 \seealso{
-\code{\link{GetPolygonBoundaries}}
+\itemize{
+\item \code{?pointdexter::GetPolygonBoundaries}
+\item \code{?pointdexter::cps_sy1819}
+}
 }

@@ -5,7 +5,7 @@
 City boundary of Chicago
 }
 \description{
-A simple feature containing the city boundary of Chicago.
+A simple feature containing the city boundary of Chicago that can only be used with the \href{https://r-spatial.github.io/sf/}{\code{sf}} package.
 }
 \usage{data("community_areas_sf")}
 \format{
@@ -18,6 +18,12 @@ A simple feature containing the city boundary of Chicago.
     \item{\code{geometry}}{a list that contains the dimensions and the simple feature geometry type}
   }
 }
+\details{
+The following is \code{sf} installation advice from \href{https://nycgeo.mattherman.info/}{Matt Herman}:
+
+
+Depending on your operating system and available libraries, \code{sf} can be tricky to install the first time. The \href{https://r-spatial.github.io/sf/index.html#installing}{\code{sf} website} is a good place to start if you're having trouble. If you're using macOS, \href{https://medium.com/@jinwujour/mapping-with-r-on-mac-installation-8c8ef997c6c2}{this is a good guide} to installing the required libraries.
+}
 \source{
 This \code{sf} object comes from the City of Chicago Data Portal, \href{https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk}{
 Boundaries - City}. The file was last updated on June 30, 2017.
@@ -26,6 +32,7 @@ Boundaries - City}. The file was last updated on June 30, 2017.
 \href{https://r-spatial.github.io/sf/}{\code{sf}} documentation has helpful information on how to work with \code{sf} objects.
 }
 \examples{
+\dontrun{
 # load necessary packages ----
 library(sf)
 
@@ -37,5 +44,6 @@ plot(city_boundary_sf$geometry
      , main = "City of Chicago boundary"
      , col = "gray85"
      , border = "dodgerblue4")
+     }
 }
 \keyword{datasets}

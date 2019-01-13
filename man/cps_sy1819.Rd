@@ -105,8 +105,5 @@ This data frame comes from the City of Chicago Data Portal, \href{https://data.c
 \examples{
 # load the necessary data -----
 data("cps_sy1819")
-
-# examine the contents of the data ----
-str(cps_sy1819)
 }
 \keyword{datasets}

@@ -10,64 +10,29 @@ vignette: >
 ---
 <base target="_top"/>
 
-Two common spatial elements used in data analysis are points and polygons:
-
-* points represent longitudinal and latitudinal coordinates, a unique pair that specifies a specific place; and
-
-* polygons represent natural or artificial borders used to distinguish boundaries across geographies. 
+## Overview
 
 The `pointdexter` package labels longitudinal and latitudinal coordinates located inside a polygon. This document introduces you to `pointdexter`'s two functions:
 
 1. `GetPolygonBoundaries()`; and
-2. `LabelPointsWithinPolygons()`
+2. `LabelPointsWithinPolygons()`.
 
 ## Spatial Data Packages
 
-`pointdexter` is compatible with the two packages most useful for working with spatial data: [`sf`](https://www.rdocumentation.org/packages/sf/versions/0.7-2) and [`sp`](https://www.rdocumentation.org/packages/sp/versions/1.3-1).
+`pointdexter` is compatible with the two packages most useful for working with spatial data: [`sf`](https://www.rdocumentation.org/packages/sf/versions/0.7-2) and [`sp`](https://www.rdocumentation.org/packages/sp/versions/1.3-1). I'll only use the `sp` package for this vignette.
 
 ```{r load necessary packages, message = FALSE}
 # load necessary packages -----
 library(pointdexter) # label coordinate pairs in polygons
-library(sf)          # simple features for R
-library(sp)          # class and methods for spatial data
-library(knitr)       # dynamic report generation
+library(sp)          # classes and methods for spatial data
+library(knitr)       # simple table generator
+library(kableExtra)  # general purpose package for dynamic report generation
 ```
 
-## Polygon Data
+## Built-in Data
+`pointdexter` comes with built-in point and polygon data - entirely due to the awesome and accessible [Chicago Data Portal](https://data.cityofchicago.org/) - to help you label points in polygons.
 
-To show what `pointdexter` does, we'll be using two types of spatial data from the City of Chicago: the [city boundary](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk) and [community area](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk) polygons. 
-
-While the city boundary is helpful for generating city-wide statistics, researchers typically use the [77 Chicago community areas](http://www.encyclopedia.chicagohistory.org/pages/319.html) when creating local-level statistics.
-
-`pointdexter` makes both polygons available as `sf` and [`SpatialPolygonsDataFrame`](https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygonsDataFrame-class) (spdf) objects. This vignette will use both types of objects interchangeably.
-
-```{r load polygon data, message = FALSE, fig.show = 'hold'}
-# load city boundary data ----
-data("city_boundary_sf")
-data("city_boundary_spdf")
-
-# load community area data ----
-data("community_areas_sf")
-data("community_areas_spdf")
-
-# visualize polygons -----
-# note: clear plot space
-par(mar = c(0, 0, 1, 0))
-
-# using simple feature object
-plot(city_boundary_sf$geometry
-     , main = "City of Chicago boundary"
-     , col = "gray85"
-     , border = "dodgerblue4")
-
-# using spdf object
-plot(community_areas_spdf
-     , main = "Chicago's 77 community areas"
-     , col = "gray85"
-     , border = "dodgerblue4")
-```
-
-## Point Data
+### Point Data
 
 The coordinate pair data comes from the [Chicago Public Schools (CPS) - School Profile Information, School Year (SY) 2018-2019](https://data.cityofchicago.org/Education/Chicago-Public-Schools-School-Profile-Information-/kh4r-387c) data set. Each coordinate pair represents a school.
 
@@ -81,11 +46,45 @@ relevant.columns <-
     , "school_longitude", "school_latitude")
 
 # print first few rows of data ----
-kable(head(cps_sy1819[, relevant.columns])
-      , caption = "Table 1. Examining CPS SY1819 school profile data")
+cps_sy1819[, relevant.columns] %>%
+  head() %>%
+  kable(caption = "Table 1. Examining CPS SY1819 school profile data") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-## Obtain boundaries of the polygon(s) with `GetPolygonBoundaries()`
+### Polygon Data
+
+To show what `pointdexter` does, we'll be using two types of spatial data from the City of Chicago: the [city boundary](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk) and [community area](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-City/ewy2-6yfk) polygons. 
+
+While the city boundary is helpful for generating city-wide statistics, researchers typically use the [77 Chicago community areas](http://www.encyclopedia.chicagohistory.org/pages/319.html) when creating local-level statistics.
+
+`pointdexter` makes both polygons available as [`sf`](https://r-spatial.github.io/sf/articles/sf1.html#what-is-a-feature) and [`SpatialPolygonsDataFrame`](https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygonsDataFrame-class) objects.
+
+```{r load polygon data, message = FALSE, fig.show = 'hold'}
+# load city boundary data ----
+data("city_boundary_spdf")
+
+# load community area data ----
+data("community_areas_spdf")
+
+# visualize polygons -----
+# note: clear plot space
+par(mar = c(0, 0, 1, 0))
+
+# plot city boundary
+plot(city_boundary_spdf
+     , main = "City of Chicago boundary"
+     , col = "gray85"
+     , border = "dodgerblue4")
+
+# plot community areas
+plot(community_areas_spdf
+     , main = "Chicago's 77 community areas"
+     , col = "gray85"
+     , border = "dodgerblue4")
+```
+
+## Step 1. Use GetPolygonBoundaries()
 
 `GetPolygonBoundaries()` returns the longitudinal and latitudinal points that make up the boundary of the polygon(s). The first argument is the polygon stored in the `sf` or `SpatialPolygonsDataFrame` object.
 
@@ -98,9 +97,11 @@ boundary <-
   GetPolygonBoundaries(my.polygon = city_boundary_spdf)
 
 # print first few records ----
-kable(head(boundary)
-      , caption = "Table 2. boundary is a matrix of coordinate pairs"
-      , col.names = c("long", "lat"))
+boundary %>%
+  head() %>%
+  kable(caption = "Table 2. boundary is a matrix of coordinate pairs"
+        , col.names = c("long", "lat")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 ### Multiple polygons
@@ -114,12 +115,16 @@ community.area.boundaries <-
                        , labels = community_areas_spdf$community)
 
 # print first few records for two communities ----
-kable(lapply(community.area.boundaries[c("AUSTIN", "WEST ELSDON")], head)
-      , caption = "Table 3. Austin (left) and West Elsdon's (right) boundaries"
-      , col.names = c("long", "lat"))
+community.area.boundaries[c("AUSTIN", "WEST ELSDON")] %>%
+  lapply(FUN = head) %>%
+  kable(caption = "Table 3. Austin (left) and West Elsdon's (right) boundaries"
+        , col.names = c("long", "lat")) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-## `LabelPointsWithinPolygons()` identifies which longitudinal and latitudinal points lie within the polygon(s)
+## Step 2. Use LabelPointsWithinPolygons() 
+
+`LabelPointsWithinPolygons()` identifies which longitudinal and latitudinal points lie within the polygon boundaries created from `GetPolygonBoundaries()`.
 
 The first two arguments of `LabelPointsWithinPolygons()` are the longitude and latitude columns that create your coordinate pairs of interest. The final argument - `polygon.boundaries` is the object you created from `GetPolygonBoundaries()`.
 
@@ -135,8 +140,10 @@ cps_sy1819$in_chicago <-
                             , polygon.boundaries = boundary)
 
 # show first few records ----
-kable(head(cps_sy1819[, c(relevant.columns, "in_chicago")])
-      , caption = "Table 4. A logical vector is returned when polygon.boundaries is a matrix")
+cps_sy1819[, c(relevant.columns, "in_chicago")] %>%
+  head() %>%
+  kable(caption = "Table 4. A logical vector is returned when polygon.boundaries is a matrix") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 ### `polygon.boundaries` is a list of matrices
@@ -151,8 +158,10 @@ cps_sy1819$community <-
                             , polygon.boundaries = community.area.boundaries)
 
 # show first few records ----
-kable(head(cps_sy1819[, c(relevant.columns, "in_chicago", "community")])
-      , caption = "Table 4. A character vector is returned when polygon.boundaries is a list of labeled matrices")
+cps_sy1819[, c(relevant.columns, "in_chicago", "community")] %>%
+  head() %>%
+  kable(caption = "Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices") %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
 ## Conclusion
@@ -170,18 +179,15 @@ austin.hs <-
 austin.hs <- austin.hs[order(austin.hs$overall_rating), ]
 
 # show results
-kable(austin.hs[, c(relevant.columns
-                    , "overall_rating", "is_high_school", "community")]
-      , caption = "Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"
-      , row.names = FALSE)
-
+austin.hs[, c(relevant.columns , "overall_rating",
+              "is_high_school", "community")] %>%
+  kable(caption = "Table 6. Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"
+        , row.names = FALSE) %>%
+  kable_styling(bootstrap_options = c("striped", "hover"))
 ```
 
-
-
-## Appendix
+## Session Info
 
 ```{r session info}
 sessionInfo()
 ```
-
