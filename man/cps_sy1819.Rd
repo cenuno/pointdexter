@@ -76,7 +76,7 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{transportation_metra}}{\href{https://metrarail.com/maps-schedules}{Metra} train routes near the school}
     \item{\code{school_latitude}}{\href{https://www.bbc.com/bitesize/guides/ztqtyrd/revision/1}{east-wide direction} of the school (ranges from 41.65 to 42.02)}
     \item{\code{school_longitude}}{\href{https://www.bbc.com/bitesize/guides/ztqtyrd/revision/1}{north-south direction} of the school (ranges from -87.84 to -87.52)}
-    \item{\code{college_enrollment_rate_school}}{college enrollment rates reflect the percent of CPS graduates who enrolled in college by the fall of their graduating year. CPS receives college enrollment data from the \href{https://studentclearinghouse.org/}{National Student Clearinghouse (NSC)}}
+    \item{\code{college_enrollment_rate_school}}{college enrollment rates reflect the percent of CPS graduates who enrolled in college by the fall of their graduating year. CPS receives college enrollment data from the \href{https://studentclearinghouse.org/about/}{National Student Clearinghouse (NSC)}}
     \item{\code{college_enrollment_rate_mean}}{the mean college enrollment rate is 68.2 percent}
     \item{\code{graduation_rate_school}}{high school graduation rate}
     \item{\code{graduation_rate_mean}}{the mean high school graduation rate is 78.2 percent}
