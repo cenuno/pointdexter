@@ -84,7 +84,7 @@
 <!--/.navbar -->
 
       
-      </header><script src="introduction-to-pointdexter_files/kePrint-0.0.1/kePrint.js"></script><div class="row">
+      </header><div class="row">
   <div class="col-md-9 contents">
     <div class="page-header toc-ignore">
       <h1>Introduction to <code>pointdexter</code>
@@ -119,8 +119,7 @@
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load necessary packages -----</span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(pointdexter) <span class="co"># label coordinate pairs in polygons</span>
 <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(sp)          <span class="co"># classes and methods for spatial data</span>
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(knitr)       <span class="co"># simple table generator</span>
-<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(kableExtra)  <span class="co"># general purpose package for dynamic report generation</span></code></pre></div>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/library">library</a></span>(knitr)       <span class="co"># simple table generator</span></code></pre></div>
 </div>
 <div id="built-in-data" class="section level2">
 <h2 class="hasAnchor">
@@ -139,112 +138,52 @@ relevant.columns &lt;-
     , <span class="st">"school_longitude"</span>, <span class="st">"school_latitude"</span>)
 
 <span class="co"># print first few rows of data ----</span>
-cps_sy1819[, relevant.columns] <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 1. Examining CPS SY1819 school profile data"</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table table table-striped table-hover">
-<caption>
-Table 1. Examining CPS SY1819 school profile data
-</caption>
-<thead><tr>
-<th style="text-align:left;">
-school_id
-</th>
-<th style="text-align:left;">
-short_name
-</th>
-<th style="text-align:right;">
-school_longitude
-</th>
-<th style="text-align:right;">
-school_latitude
-</th>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(cps_sy1819[, relevant.columns])
+      , <span class="dt">caption =</span> <span class="st">"Table 1. Examining CPS SY1819 school profile data"</span>)</code></pre></div>
+<table class="table">
+<caption>Table 1. Examining CPS SY1819 school profile data</caption>
+<thead><tr class="header">
+<th align="left">school_id</th>
+<th align="left">short_name</th>
+<th align="right">school_longitude</th>
+<th align="right">school_latitude</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-609760
-</td>
-<td style="text-align:left;">
-CARVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.59062
-</td>
-<td style="text-align:right;">
-41.65629
-</td>
+<tr class="odd">
+<td align="left">609760</td>
+<td align="left">CARVER MILITARY HS</td>
+<td align="right">-87.59062</td>
+<td align="right">41.65629</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609780
-</td>
-<td style="text-align:left;">
-MARINE LEADERSHIP AT AMES HS
-</td>
-<td style="text-align:right;">
--87.72174
-</td>
-<td style="text-align:right;">
-41.91604
-</td>
+<tr class="even">
+<td align="left">609780</td>
+<td align="left">MARINE LEADERSHIP AT AMES HS</td>
+<td align="right">-87.72174</td>
+<td align="right">41.91604</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610304
-</td>
-<td style="text-align:left;">
-PHOENIX MILITARY HS
-</td>
-<td style="text-align:right;">
--87.68696
-</td>
-<td style="text-align:right;">
-41.87912
-</td>
+<tr class="odd">
+<td align="left">610304</td>
+<td align="left">PHOENIX MILITARY HS</td>
+<td align="right">-87.68696</td>
+<td align="right">41.87912</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610513
-</td>
-<td style="text-align:left;">
-AIR FORCE HS
-</td>
-<td style="text-align:right;">
--87.63276
-</td>
-<td style="text-align:right;">
-41.82814
-</td>
+<tr class="even">
+<td align="left">610513</td>
+<td align="left">AIR FORCE HS</td>
+<td align="right">-87.63276</td>
+<td align="right">41.82814</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610390
-</td>
-<td style="text-align:left;">
-RICKOVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.66579
-</td>
-<td style="text-align:right;">
-41.98902
-</td>
+<tr class="odd">
+<td align="left">610390</td>
+<td align="left">RICKOVER MILITARY HS</td>
+<td align="right">-87.66579</td>
+<td align="right">41.98902</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609754
-</td>
-<td style="text-align:left;">
-CHICAGO MILITARY HS
-</td>
-<td style="text-align:right;">
--87.61922
-</td>
-<td style="text-align:right;">
-41.83055
-</td>
+<tr class="even">
+<td align="left">609754</td>
+<td align="left">CHICAGO MILITARY HS</td>
+<td align="right">-87.61922</td>
+<td align="right">41.83055</td>
 </tr>
 </tbody>
 </table>
@@ -292,71 +231,39 @@ boundary &lt;-<span class="st"> </span>
 <span class="st">  </span><span class="kw"><a href="../reference/GetPolygonBoundaries.html">GetPolygonBoundaries</a></span>(<span class="dt">my.polygon =</span> city_boundary_spdf)
 
 <span class="co"># print first few records ----</span>
-boundary <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 2. boundary is a matrix of coordinate pairs"</span>
-        , <span class="dt">col.names =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table table table-striped table-hover">
-<caption>
-Table 2. boundary is a matrix of coordinate pairs
-</caption>
-<thead><tr>
-<th style="text-align:right;">
-long
-</th>
-<th style="text-align:right;">
-lat
-</th>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(boundary)
+        , <span class="dt">caption =</span> <span class="st">"Table 2. boundary is a matrix of coordinate pairs"</span>
+        , <span class="dt">col.names =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"long"</span>, <span class="st">"lat"</span>))</code></pre></div>
+<table class="table">
+<caption>Table 2. boundary is a matrix of coordinate pairs</caption>
+<thead><tr class="header">
+<th align="right">long</th>
+<th align="right">lat</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
--87.93514
-</td>
-<td style="text-align:right;">
-42.00089
-</td>
+<tr class="odd">
+<td align="right">-87.93514</td>
+<td align="right">42.00089</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.93509
-</td>
-<td style="text-align:right;">
-42.00094
-</td>
+<tr class="even">
+<td align="right">-87.93509</td>
+<td align="right">42.00094</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.93517
-</td>
-<td style="text-align:right;">
-42.00333
-</td>
+<tr class="odd">
+<td align="right">-87.93517</td>
+<td align="right">42.00333</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.93519
-</td>
-<td style="text-align:right;">
-42.00430
-</td>
+<tr class="even">
+<td align="right">-87.93519</td>
+<td align="right">42.00430</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.93521
-</td>
-<td style="text-align:right;">
-42.00491
-</td>
+<tr class="odd">
+<td align="right">-87.93521</td>
+<td align="right">42.00491</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.93523
-</td>
-<td style="text-align:right;">
-42.00573
-</td>
+<tr class="even">
+<td align="right">-87.93523</td>
+<td align="right">42.00573</td>
 </tr>
 </tbody>
 </table>
@@ -371,136 +278,79 @@ community.area.boundaries &lt;-
                        , <span class="dt">labels =</span> community_areas_spdf<span class="op">$</span>community)
 
 <span class="co"># print first few records for two communities ----</span>
-community.area.boundaries[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"AUSTIN"</span>, <span class="st">"WEST ELSDON"</span>)] <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/lapply">lapply</a></span>(<span class="dt">FUN =</span> head) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 3. Austin (left) and West Elsdon's (right) boundaries"</span>
-        , <span class="dt">col.names =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"long"</span>, <span class="st">"lat"</span>)) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table kable_wrapper table table-striped table-hover">
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/lapply">lapply</a></span>(community.area.boundaries[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"AUSTIN"</span>, <span class="st">"WEST ELSDON"</span>)]
+             , <span class="dt">FUN =</span> head)
+      , <span class="dt">caption =</span> <span class="st">"Table 3. Austin (left) and West Elsdon's (right) boundaries"</span>
+      , <span class="dt">col.names =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"long"</span>, <span class="st">"lat"</span>))</code></pre></div>
+<table class="table kable_wrapper">
 <caption>
 Table 3. Austin (left) and West Elsdon’s (right) boundaries
 </caption>
 <tbody><tr>
 <td>
 <table class="table">
-<thead><tr>
-<th style="text-align:right;">
-long
-</th>
-<th style="text-align:right;">
-lat
-</th>
+<thead><tr class="header">
+<th align="right">long</th>
+<th align="right">lat</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
--87.78942
-</td>
-<td style="text-align:right;">
-41.91751
-</td>
+<tr class="odd">
+<td align="right">-87.78942</td>
+<td align="right">41.91751</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.78927
-</td>
-<td style="text-align:right;">
-41.91743
-</td>
+<tr class="even">
+<td align="right">-87.78927</td>
+<td align="right">41.91743</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.78896
-</td>
-<td style="text-align:right;">
-41.91730
-</td>
+<tr class="odd">
+<td align="right">-87.78896</td>
+<td align="right">41.91730</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.78888
-</td>
-<td style="text-align:right;">
-41.91727
-</td>
+<tr class="even">
+<td align="right">-87.78888</td>
+<td align="right">41.91727</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.78873
-</td>
-<td style="text-align:right;">
-41.91722
-</td>
+<tr class="odd">
+<td align="right">-87.78873</td>
+<td align="right">41.91722</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.78863
-</td>
-<td style="text-align:right;">
-41.91718
-</td>
+<tr class="even">
+<td align="right">-87.78863</td>
+<td align="right">41.91718</td>
 </tr>
 </tbody>
 </table>
 </td>
 <td>
 <table class="table">
-<thead><tr>
-<th style="text-align:right;">
-long
-</th>
-<th style="text-align:right;">
-lat
-</th>
+<thead><tr class="header">
+<th align="right">long</th>
+<th align="right">lat</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:right;">
--87.71378
-</td>
-<td style="text-align:right;">
-41.80393
-</td>
+<tr class="odd">
+<td align="right">-87.71378</td>
+<td align="right">41.80393</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.71377
-</td>
-<td style="text-align:right;">
-41.80348
-</td>
+<tr class="even">
+<td align="right">-87.71377</td>
+<td align="right">41.80348</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.71375
-</td>
-<td style="text-align:right;">
-41.80247
-</td>
+<tr class="odd">
+<td align="right">-87.71375</td>
+<td align="right">41.80247</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.71371
-</td>
-<td style="text-align:right;">
-41.80081
-</td>
+<tr class="even">
+<td align="right">-87.71371</td>
+<td align="right">41.80081</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.71350
-</td>
-<td style="text-align:right;">
-41.80069
-</td>
+<tr class="odd">
+<td align="right">-87.71350</td>
+<td align="right">41.80069</td>
 </tr>
-<tr>
-<td style="text-align:right;">
--87.71361
-</td>
-<td style="text-align:right;">
-41.80069
-</td>
+<tr class="even">
+<td align="right">-87.71361</td>
+<td align="right">41.80069</td>
 </tr>
 </tbody>
 </table>
@@ -525,133 +375,59 @@ cps_sy1819<span class="op">$</span>in_chicago &lt;-
                             , <span class="dt">polygon.boundaries =</span> boundary)
 
 <span class="co"># show first few records ----</span>
-cps_sy1819[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns, <span class="st">"in_chicago"</span>)] <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 4. A logical vector is returned when polygon.boundaries is a matrix"</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table table table-striped table-hover">
-<caption>
-Table 4. A logical vector is returned when polygon.boundaries is a matrix
-</caption>
-<thead><tr>
-<th style="text-align:left;">
-school_id
-</th>
-<th style="text-align:left;">
-short_name
-</th>
-<th style="text-align:right;">
-school_longitude
-</th>
-<th style="text-align:right;">
-school_latitude
-</th>
-<th style="text-align:left;">
-in_chicago
-</th>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(cps_sy1819[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns, <span class="st">"in_chicago"</span>)])
+      , <span class="dt">caption =</span> <span class="st">"Table 4. A logical vector is returned when polygon.boundaries is a matrix"</span>)</code></pre></div>
+<table class="table">
+<caption>Table 4. A logical vector is returned when polygon.boundaries is a matrix</caption>
+<thead><tr class="header">
+<th align="left">school_id</th>
+<th align="left">short_name</th>
+<th align="right">school_longitude</th>
+<th align="right">school_latitude</th>
+<th align="left">in_chicago</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-609760
-</td>
-<td style="text-align:left;">
-CARVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.59062
-</td>
-<td style="text-align:right;">
-41.65629
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="odd">
+<td align="left">609760</td>
+<td align="left">CARVER MILITARY HS</td>
+<td align="right">-87.59062</td>
+<td align="right">41.65629</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609780
-</td>
-<td style="text-align:left;">
-MARINE LEADERSHIP AT AMES HS
-</td>
-<td style="text-align:right;">
--87.72174
-</td>
-<td style="text-align:right;">
-41.91604
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="even">
+<td align="left">609780</td>
+<td align="left">MARINE LEADERSHIP AT AMES HS</td>
+<td align="right">-87.72174</td>
+<td align="right">41.91604</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610304
-</td>
-<td style="text-align:left;">
-PHOENIX MILITARY HS
-</td>
-<td style="text-align:right;">
--87.68696
-</td>
-<td style="text-align:right;">
-41.87912
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="odd">
+<td align="left">610304</td>
+<td align="left">PHOENIX MILITARY HS</td>
+<td align="right">-87.68696</td>
+<td align="right">41.87912</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610513
-</td>
-<td style="text-align:left;">
-AIR FORCE HS
-</td>
-<td style="text-align:right;">
--87.63276
-</td>
-<td style="text-align:right;">
-41.82814
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="even">
+<td align="left">610513</td>
+<td align="left">AIR FORCE HS</td>
+<td align="right">-87.63276</td>
+<td align="right">41.82814</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610390
-</td>
-<td style="text-align:left;">
-RICKOVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.66579
-</td>
-<td style="text-align:right;">
-41.98902
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="odd">
+<td align="left">610390</td>
+<td align="left">RICKOVER MILITARY HS</td>
+<td align="right">-87.66579</td>
+<td align="right">41.98902</td>
+<td align="left">TRUE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609754
-</td>
-<td style="text-align:left;">
-CHICAGO MILITARY HS
-</td>
-<td style="text-align:right;">
--87.61922
-</td>
-<td style="text-align:right;">
-41.83055
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
+<tr class="even">
+<td align="left">609754</td>
+<td align="left">CHICAGO MILITARY HS</td>
+<td align="right">-87.61922</td>
+<td align="right">41.83055</td>
+<td align="left">TRUE</td>
 </tr>
 </tbody>
 </table>
@@ -667,154 +443,66 @@ cps_sy1819<span class="op">$</span>community &lt;-
                             , <span class="dt">polygon.boundaries =</span> community.area.boundaries)
 
 <span class="co"># show first few records ----</span>
-cps_sy1819[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns, <span class="st">"in_chicago"</span>, <span class="st">"community"</span>)] <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>() <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices"</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table table table-striped table-hover">
-<caption>
-Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices
-</caption>
-<thead><tr>
-<th style="text-align:left;">
-school_id
-</th>
-<th style="text-align:left;">
-short_name
-</th>
-<th style="text-align:right;">
-school_longitude
-</th>
-<th style="text-align:right;">
-school_latitude
-</th>
-<th style="text-align:left;">
-in_chicago
-</th>
-<th style="text-align:left;">
-community
-</th>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/head">head</a></span>(cps_sy1819[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns, <span class="st">"in_chicago"</span>, <span class="st">"community"</span>)])
+           , <span class="dt">caption =</span> <span class="st">"Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices"</span>)</code></pre></div>
+<table class="table">
+<caption>Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices</caption>
+<thead><tr class="header">
+<th align="left">school_id</th>
+<th align="left">short_name</th>
+<th align="right">school_longitude</th>
+<th align="right">school_latitude</th>
+<th align="left">in_chicago</th>
+<th align="left">community</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-609760
-</td>
-<td style="text-align:left;">
-CARVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.59062
-</td>
-<td style="text-align:right;">
-41.65629
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-RIVERDALE
-</td>
+<tr class="odd">
+<td align="left">609760</td>
+<td align="left">CARVER MILITARY HS</td>
+<td align="right">-87.59062</td>
+<td align="right">41.65629</td>
+<td align="left">TRUE</td>
+<td align="left">RIVERDALE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609780
-</td>
-<td style="text-align:left;">
-MARINE LEADERSHIP AT AMES HS
-</td>
-<td style="text-align:right;">
--87.72174
-</td>
-<td style="text-align:right;">
-41.91604
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-LOGAN SQUARE
-</td>
+<tr class="even">
+<td align="left">609780</td>
+<td align="left">MARINE LEADERSHIP AT AMES HS</td>
+<td align="right">-87.72174</td>
+<td align="right">41.91604</td>
+<td align="left">TRUE</td>
+<td align="left">LOGAN SQUARE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610304
-</td>
-<td style="text-align:left;">
-PHOENIX MILITARY HS
-</td>
-<td style="text-align:right;">
--87.68696
-</td>
-<td style="text-align:right;">
-41.87912
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-NEAR WEST SIDE
-</td>
+<tr class="odd">
+<td align="left">610304</td>
+<td align="left">PHOENIX MILITARY HS</td>
+<td align="right">-87.68696</td>
+<td align="right">41.87912</td>
+<td align="left">TRUE</td>
+<td align="left">NEAR WEST SIDE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610513
-</td>
-<td style="text-align:left;">
-AIR FORCE HS
-</td>
-<td style="text-align:right;">
--87.63276
-</td>
-<td style="text-align:right;">
-41.82814
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-ARMOUR SQUARE
-</td>
+<tr class="even">
+<td align="left">610513</td>
+<td align="left">AIR FORCE HS</td>
+<td align="right">-87.63276</td>
+<td align="right">41.82814</td>
+<td align="left">TRUE</td>
+<td align="left">ARMOUR SQUARE</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610390
-</td>
-<td style="text-align:left;">
-RICKOVER MILITARY HS
-</td>
-<td style="text-align:right;">
--87.66579
-</td>
-<td style="text-align:right;">
-41.98902
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-EDGEWATER
-</td>
+<tr class="odd">
+<td align="left">610390</td>
+<td align="left">RICKOVER MILITARY HS</td>
+<td align="right">-87.66579</td>
+<td align="right">41.98902</td>
+<td align="left">TRUE</td>
+<td align="left">EDGEWATER</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-609754
-</td>
-<td style="text-align:left;">
-CHICAGO MILITARY HS
-</td>
-<td style="text-align:right;">
--87.61922
-</td>
-<td style="text-align:right;">
-41.83055
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-DOUGLAS
-</td>
+<tr class="even">
+<td align="left">609754</td>
+<td align="left">CHICAGO MILITARY HS</td>
+<td align="right">-87.61922</td>
+<td align="right">41.83055</td>
+<td align="left">TRUE</td>
+<td align="left">DOUGLAS</td>
 </tr>
 </tbody>
 </table>
@@ -834,176 +522,75 @@ austin.hs &lt;-
 austin.hs &lt;-<span class="st"> </span>austin.hs[<span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/order">order</a></span>(austin.hs<span class="op">$</span>overall_rating), ]
 
 <span class="co"># show results</span>
-austin.hs[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns , <span class="st">"overall_rating"</span>,
-              <span class="st">"is_high_school"</span>, <span class="st">"community"</span>)] <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(<span class="dt">caption =</span> <span class="st">"Table 6. Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"</span>
-        , <span class="dt">row.names =</span> <span class="ot">FALSE</span>) <span class="op">%&gt;%</span>
-<span class="st">  </span><span class="kw"><a href="https://www.rdocumentation.org/packages/kableExtra/topics/kable_styling">kable_styling</a></span>(<span class="dt">bootstrap_options =</span> <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(<span class="st">"striped"</span>, <span class="st">"hover"</span>))</code></pre></div>
-<table class="table table table-striped table-hover">
-<caption>
-Table 6. Austin’s highest rank high school is YCCS - Scholastic Academy, SY1819
-</caption>
-<thead><tr>
-<th style="text-align:left;">
-school_id
-</th>
-<th style="text-align:left;">
-short_name
-</th>
-<th style="text-align:right;">
-school_longitude
-</th>
-<th style="text-align:right;">
-school_latitude
-</th>
-<th style="text-align:left;">
-overall_rating
-</th>
-<th style="text-align:left;">
-is_high_school
-</th>
-<th style="text-align:left;">
-community
-</th>
+<span class="kw"><a href="https://www.rdocumentation.org/packages/knitr/topics/kable">kable</a></span>(austin.hs[, <span class="kw"><a href="https://www.rdocumentation.org/packages/base/topics/c">c</a></span>(relevant.columns , <span class="st">"overall_rating"</span>,
+              <span class="st">"is_high_school"</span>, <span class="st">"community"</span>)]
+      , <span class="dt">caption =</span> <span class="st">"Table 6. Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"</span>
+        , <span class="dt">row.names =</span> <span class="ot">FALSE</span>)</code></pre></div>
+<table class="table">
+<caption>Table 6. Austin’s highest rank high school is YCCS - Scholastic Academy, SY1819</caption>
+<thead><tr class="header">
+<th align="left">school_id</th>
+<th align="left">short_name</th>
+<th align="right">school_longitude</th>
+<th align="right">school_latitude</th>
+<th align="left">overall_rating</th>
+<th align="left">is_high_school</th>
+<th align="left">community</th>
 </tr></thead>
 <tbody>
-<tr>
-<td style="text-align:left;">
-400123
-</td>
-<td style="text-align:left;">
-YCCS - SCHOLASTIC ACHIEVEMENT
-</td>
-<td style="text-align:right;">
--87.74254
-</td>
-<td style="text-align:right;">
-41.88045
-</td>
-<td style="text-align:left;">
-Level 1+
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="odd">
+<td align="left">400123</td>
+<td align="left">YCCS - SCHOLASTIC ACHIEVEMENT</td>
+<td align="right">-87.74254</td>
+<td align="right">41.88045</td>
+<td align="left">Level 1+</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-400127
-</td>
-<td style="text-align:left;">
-YCCS - AUSTIN CAREER
-</td>
-<td style="text-align:right;">
--87.76022
-</td>
-<td style="text-align:right;">
-41.89498
-</td>
-<td style="text-align:left;">
-Level 1
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="even">
+<td align="left">400127</td>
+<td align="left">YCCS - AUSTIN CAREER</td>
+<td align="right">-87.76022</td>
+<td align="right">41.89498</td>
+<td align="left">Level 1</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-400144
-</td>
-<td style="text-align:left;">
-YCCS - WESTSIDE HOLISTIC
-</td>
-<td style="text-align:right;">
--87.74881
-</td>
-<td style="text-align:right;">
-41.90224
-</td>
-<td style="text-align:left;">
-Level 1
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="odd">
+<td align="left">400144</td>
+<td align="left">YCCS - WESTSIDE HOLISTIC</td>
+<td align="right">-87.74881</td>
+<td align="right">41.90224</td>
+<td align="left">Level 1</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610244
-</td>
-<td style="text-align:left;">
-CLARK HS
-</td>
-<td style="text-align:right;">
--87.75333
-</td>
-<td style="text-align:right;">
-41.87288
-</td>
-<td style="text-align:left;">
-Level 2+
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="even">
+<td align="left">610244</td>
+<td align="left">CLARK HS</td>
+<td align="right">-87.75333</td>
+<td align="right">41.87288</td>
+<td align="left">Level 2+</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610245
-</td>
-<td style="text-align:left;">
-DOUGLASS HS
-</td>
-<td style="text-align:right;">
--87.76767
-</td>
-<td style="text-align:right;">
-41.89037
-</td>
-<td style="text-align:left;">
-Level 2
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="odd">
+<td align="left">610245</td>
+<td align="left">DOUGLASS HS</td>
+<td align="right">-87.76767</td>
+<td align="right">41.89037</td>
+<td align="left">Level 2</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
-<tr>
-<td style="text-align:left;">
-610518
-</td>
-<td style="text-align:left;">
-AUSTIN CCA HS
-</td>
-<td style="text-align:right;">
--87.76192
-</td>
-<td style="text-align:right;">
-41.88599
-</td>
-<td style="text-align:left;">
-Level 2
-</td>
-<td style="text-align:left;">
-TRUE
-</td>
-<td style="text-align:left;">
-AUSTIN
-</td>
+<tr class="even">
+<td align="left">610518</td>
+<td align="left">AUSTIN CCA HS</td>
+<td align="right">-87.76192</td>
+<td align="right">41.88599</td>
+<td align="left">Level 2</td>
+<td align="left">TRUE</td>
+<td align="left">AUSTIN</td>
 </tr>
 </tbody>
 </table>
@@ -1027,25 +614,19 @@ AUSTIN
 ## [1] stats     graphics  grDevices utils     datasets  methods   base     
 ## 
 ## other attached packages:
-## [1] kableExtra_0.9.0  knitr_1.21        sp_1.3-1          pointdexter_0.1.0
+## [1] knitr_1.21        sp_1.3-1          pointdexter_0.1.0
 ## 
 ## loaded via a namespace (and not attached):
-##  [1] Rcpp_1.0.0        highr_0.7         compiler_3.5.2   
-##  [4] pillar_1.3.1      class_7.3-14      tools_3.5.2      
-##  [7] digest_0.6.18     viridisLite_0.3.0 evaluate_0.12    
-## [10] memoise_1.1.0     tibble_2.0.0      lattice_0.20-38  
-## [13] pkgconfig_2.0.2   rlang_0.3.1       DBI_1.0.0        
-## [16] rstudioapi_0.9.0  commonmark_1.7    yaml_2.2.0       
-## [19] pkgdown_1.3.0     xfun_0.4          e1071_1.7-0      
-## [22] stringr_1.3.1     httr_1.4.0        roxygen2_6.1.1   
-## [25] xml2_1.2.0        desc_1.2.0        fs_1.2.6         
-## [28] hms_0.4.2         classInt_0.3-1    rprojroot_1.3-2  
-## [31] grid_3.5.2        sf_0.7-2          R6_2.3.0         
-## [34] rmarkdown_1.11    readr_1.3.1       magrittr_1.5     
-## [37] units_0.6-2       backports_1.1.3   scales_1.0.0     
-## [40] splancs_2.01-40   htmltools_0.3.6   MASS_7.3-51.1    
-## [43] assertthat_0.2.0  rvest_0.3.2       colorspace_1.3-2 
-## [46] stringi_1.2.4     munsell_0.5.0     crayon_1.3.4</code></pre>
+##  [1] Rcpp_1.0.0       rstudioapi_0.9.0 xml2_1.2.0       magrittr_1.5    
+##  [5] roxygen2_6.1.1   units_0.6-2      MASS_7.3-51.1    lattice_0.20-38 
+##  [9] R6_2.3.0         rlang_0.3.1      highr_0.7        stringr_1.3.1   
+## [13] tools_3.5.2      grid_3.5.2       xfun_0.4         e1071_1.7-0     
+## [17] DBI_1.0.0        class_7.3-14     htmltools_0.3.6  commonmark_1.7  
+## [21] yaml_2.2.0       digest_0.6.18    assertthat_0.2.0 rprojroot_1.3-2 
+## [25] sf_0.7-2         pkgdown_1.3.0    crayon_1.3.4     splancs_2.01-40 
+## [29] fs_1.2.6         memoise_1.1.0    evaluate_0.12    rmarkdown_1.11  
+## [33] stringi_1.2.4    compiler_3.5.2   desc_1.2.0       backports_1.1.3 
+## [37] classInt_0.3-1</code></pre>
 </div>
   </div>
 

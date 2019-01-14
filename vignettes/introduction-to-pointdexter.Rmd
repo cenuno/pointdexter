@@ -26,7 +26,6 @@ The `pointdexter` package labels longitudinal and latitudinal coordinates locate
 library(pointdexter) # label coordinate pairs in polygons
 library(sp)          # classes and methods for spatial data
 library(knitr)       # simple table generator
-library(kableExtra)  # general purpose package for dynamic report generation
 ```
 
 ## Built-in Data
@@ -46,10 +45,8 @@ relevant.columns <-
     , "school_longitude", "school_latitude")
 
 # print first few rows of data ----
-cps_sy1819[, relevant.columns] %>%
-  head() %>%
-  kable(caption = "Table 1. Examining CPS SY1819 school profile data") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(head(cps_sy1819[, relevant.columns])
+      , caption = "Table 1. Examining CPS SY1819 school profile data")
 ```
 
 ### Polygon Data
@@ -97,11 +94,9 @@ boundary <-
   GetPolygonBoundaries(my.polygon = city_boundary_spdf)
 
 # print first few records ----
-boundary %>%
-  head() %>%
-  kable(caption = "Table 2. boundary is a matrix of coordinate pairs"
-        , col.names = c("long", "lat")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(head(boundary)
+        , caption = "Table 2. boundary is a matrix of coordinate pairs"
+        , col.names = c("long", "lat"))
 ```
 
 ### Multiple polygons
@@ -115,11 +110,10 @@ community.area.boundaries <-
                        , labels = community_areas_spdf$community)
 
 # print first few records for two communities ----
-community.area.boundaries[c("AUSTIN", "WEST ELSDON")] %>%
-  lapply(FUN = head) %>%
-  kable(caption = "Table 3. Austin (left) and West Elsdon's (right) boundaries"
-        , col.names = c("long", "lat")) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(lapply(community.area.boundaries[c("AUSTIN", "WEST ELSDON")]
+             , FUN = head)
+      , caption = "Table 3. Austin (left) and West Elsdon's (right) boundaries"
+      , col.names = c("long", "lat"))
 ```
 
 ## Step 2. Use LabelPointsWithinPolygons() 
@@ -140,10 +134,8 @@ cps_sy1819$in_chicago <-
                             , polygon.boundaries = boundary)
 
 # show first few records ----
-cps_sy1819[, c(relevant.columns, "in_chicago")] %>%
-  head() %>%
-  kable(caption = "Table 4. A logical vector is returned when polygon.boundaries is a matrix") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(head(cps_sy1819[, c(relevant.columns, "in_chicago")])
+      , caption = "Table 4. A logical vector is returned when polygon.boundaries is a matrix")
 ```
 
 ### `polygon.boundaries` is a list of matrices
@@ -158,10 +150,8 @@ cps_sy1819$community <-
                             , polygon.boundaries = community.area.boundaries)
 
 # show first few records ----
-cps_sy1819[, c(relevant.columns, "in_chicago", "community")] %>%
-  head() %>%
-  kable(caption = "Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices") %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(head(cps_sy1819[, c(relevant.columns, "in_chicago", "community")])
+           , caption = "Table 5. A character vector is returned when polygon.boundaries is a list of labeled matrices")
 ```
 
 ## Conclusion
@@ -179,11 +169,10 @@ austin.hs <-
 austin.hs <- austin.hs[order(austin.hs$overall_rating), ]
 
 # show results
-austin.hs[, c(relevant.columns , "overall_rating",
-              "is_high_school", "community")] %>%
-  kable(caption = "Table 6. Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"
-        , row.names = FALSE) %>%
-  kable_styling(bootstrap_options = c("striped", "hover"))
+kable(austin.hs[, c(relevant.columns , "overall_rating",
+              "is_high_school", "community")]
+      , caption = "Table 6. Austin's highest rank high school is YCCS - Scholastic Academy, SY1819"
+        , row.names = FALSE)
 ```
 
 ## Session Info

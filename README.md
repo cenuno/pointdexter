@@ -6,9 +6,6 @@ pointdexter <img src="man/figures/logo.png" align="right" alt="" width="140" />
 <!-- badges: start -->
 [![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter) <!-- badges: end -->
 
-pointdexter
-===========
-
 The `pointdexter` package labels longitudinal and latitudinal coordinates located inside a polygon.
 
 Description
@@ -30,16 +27,10 @@ However, `pointdexter` also works with the [`sf`](https://www.rdocumentation.org
 Installation
 ------------
 
-You can install the released version of `pointdexter` from [CRAN](https://CRAN.R-project.org) with:
-
-``` r
-install.packages("pointdexter")
-```
-
 Development versions can be installed from GitHub:
 
 ``` r
-devtools::install_github("cenuno/pointdexter")
+remotes::install_github("cenuno/pointdexter")
 ```
 
 Usage
@@ -164,8 +155,8 @@ Resources
 
 After you've installed the package, be sure to view the help files that introduce you to `pointdexter`'s two functions:
 
-1.  `?pointdexter::GetPolygonBoundaries()`; and
-2.  `?pointdexter::LabelPointsWithinPolygons()`
+1.  [`?pointdexter::GetPolygonBoundaries()`](https://cenuno.github.io/pointdexter/reference/GetPolygonBoundaries.html); and
+2.  [`?pointdexter::LabelPointsWithinPolygons()`](https://cenuno.github.io/pointdexter/reference/LabelPointsWithinPolygons.html).
 
 Feedback
 --------
