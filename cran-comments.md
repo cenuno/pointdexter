@@ -15,6 +15,8 @@ In this version I have:
 
 * Replaced `sf` URLs.
 
+* Replaced broken URLs in cps_sy1819.rd file.
+
 ## Test environments
 
 * local: macOS High Sierra 10.13.6 install, R 3.5.2

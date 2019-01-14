@@ -86,7 +86,7 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{classification_type}}{12 different types of school admission processes and curriculum}
     \item{\code{classification_description}}{text description of \code{classification_type}}
     \item{\code{school_year}}{School Year 2018-2019}
-    \item{\code{network}}{District-run schools in CPS are organized into geographic \href{https://cpsparentu.org/apps/news/show_news.jsp?REC_ID=516317&id=1}{networks}, which provide administrative support, strategic direction, and leadership development to the schools within each network}
+    \item{\code{network}}{District-run schools in CPS are organized into geographic \href{https://data.cityofchicago.org/Education/Chicago-Public-Schools-Geographic-Networks/3y7n-mx9t}{networks}, which provide administrative support, strategic direction, and leadership development to the schools within each network}
     \item{\code{is_gocps_participant}}{\href{https://go.cps.edu/}{GoCPS} allows families to learn, research, explore, and apply to nearly every CPS school and program through one online platform}
     \item{\code{is_gocps_prek}}{T/F if school serves Pre-Kindergarteners and is on GoCPS}
     \item{\code{is_gocps_elementary}}{T/F if school serves elementary grade students and is on GoCPS}
