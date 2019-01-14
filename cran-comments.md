@@ -6,6 +6,8 @@ This is a third resubmission. In this version I have:
 
 * Confirmed that the package `sf` - listed under Suggestions in the DESCRIPTION file - fails to install due to its configuration requirements.
 
+* Unsure if next steps would require me to copy and paste the DOCKERFILE's in [sf/inst/docker](https://github.com/r-spatial/sf/tree/master/inst/docker#build-and-check-sf-against-r-release-and-r-devel)
+
 * Removed use of `sf` in the vignette. 
 
 * `sf` examples in the `.Rd` files will no longer be run, courtesy of `\dontrun{}`.
