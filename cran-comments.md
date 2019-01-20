@@ -35,6 +35,11 @@ In this version I have:
     + 2 NOTEs:
         - New submission
         - Package which this enhances but not available for checking: ‘sf’
+        
+* rhub: Windows Server 2008 R2 SP1, R-devel, 32/64 bit
++ 2 NOTEs:
+        - New submission
+        - Package which this enhances but not available for checking: ‘sf’
 
 ## R CMD check results
 There were no ERRORs, WARNINGs or NOTEs
