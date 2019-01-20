@@ -23,7 +23,7 @@ In this version I have:
 
 * travis-ci: Ubuntu 14.04.5 LTS, R 3.5.2
 
-* win-builder: x86_64-w64-mingw32 (64-bit) on R-devel (2019-01-09 r75961) and R-release 3.5.2 (2018-12-20)
+* win-builder: x86_64-w64-mingw32 (64-bit) on R-devel (2019-01-18 r75994) and R-release 3.5.2 (2018-12-20)
     + 1 NOTE: new submission
 
 * rhub: Fedora Linux, R-devel, clang, gfortran
