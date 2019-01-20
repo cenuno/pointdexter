@@ -68,7 +68,7 @@ A data frame of 660 observations - one record per school - on the following 81 v
     \item{\code{title_1_eligible}}{T/F if school is eligible for \href{https://www2.ed.gov/programs/titleiparta/index.html}{Title 1} federal funds}
     \item{\code{preschool_inclusive}}{T/F if pre-school is inclusive}
     \item{\code{preschool_instructional}}{T/F if pre-school is instructional}
-    \item{\code{significantly_modified}}{T/F if school offers \href{https://cps.edu/ODLSS/Pages/ServicesandPrograms.aspx}{services} that provide students who need focused and very specific medical issues to supports for different learning styles and difficulties}
+    \item{\code{significantly_modified}}{T/F if school offers \href{hhttps://cps.edu/diverselearners/Pages/ServicesandPrograms.aspx}{services} that provide students who need focused and very specific medical issues to supports for different learning styles and difficulties}
     \item{\code{hard_of_hearing}}{T/F if school offers curriculum for deaf and hard-of-hearing (HOH) students}
     \item{\code{visual_impairments}}{T/F if school offers curriculum for visually impaired students}
     \item{\code{transportation_bus}}{\href{http://www.ctabustracker.com/bustime/map/displaymap.jsp}{CTA} bus routes near the school (only route numbers)}

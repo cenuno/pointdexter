@@ -166,20 +166,19 @@ Boundaries - Community Areas (current)</a>. The file was last updated on Decembe
     
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='co'># load necessary packages ----</span>
+    <pre class="examples"><div class='input'><span class='co'># load necessary packages ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>sf</span>)
 
 <span class='co'># load necessary data ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"community_areas_sf"</span>)
 
-<span class='co'># plot all 77 community areas</span>
+<span class='co'># plot all 77 community areas -----</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>))
+
 <span class='fu'><a href='https://www.rdocumentation.org/packages/sf/topics/plot'>plot</a></span>(<span class='no'>community_areas_sf</span>$<span class='no'>geometry</span>
      , <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"Chicago's 77 community areas"</span>
      , <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"gray85"</span>
-     , <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"dodgerblue4"</span>)
-
-<span class='co'># }</span></pre>
+     , <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"dodgerblue4"</span>)</div><div class='img'><img src='community_areas_sf-1.png' alt='' width='700' height='433' /></div><div class='input'>     </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

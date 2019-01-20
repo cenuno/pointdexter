@@ -39,7 +39,7 @@ data("community_areas_spdf")
 boundaries <-
   GetPolygonBoundaries(my.polygon = community_areas_spdf
                        , labels = community_areas_spdf$community)
-\dontrun{
+\donttest{
 ## sf, one polygon example ## -----
 
 # load necessary package ----
@@ -52,7 +52,7 @@ data("city_boundary_sf")
 boundaries <- GetPolygonBoundaries(my.polygon = city_boundary_sf)
 }
 
-\dontrun{
+\donttest{
 ## sf, multipolygon example ## -----
 
 # load necessary package ----

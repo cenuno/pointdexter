@@ -29,6 +29,8 @@ library(sp)
 data("city_boundary_spdf")
 
 # plot Chicago ----
+par(mar = c(0, 0, 1, 0))
+
 plot(city_boundary_spdf
      , main = "City of Chicago boundary"
      , col = "gray85"

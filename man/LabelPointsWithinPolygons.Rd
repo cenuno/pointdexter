@@ -48,13 +48,13 @@ boundaries <-
   GetPolygonBoundaries(my.polygon = community_areas_spdf
                        , labels = community_areas_spdf$community)
 
-# identify the scools which lie within each of the 77 Chicago community areas -----
+# identify the schools which lie within each of the 77 Chicago community areas -----
 cps_sy1819$community <-
   LabelPointsWithinPolygons(lng = cps_sy1819$school_longitude
                             , lat = cps_sy1819$school_latitude
                             , polygon.boundaries = boundaries)
 
-\dontrun{
+\donttest{
 ## sf, one polygon example ## -----
 
 # load necessary package ----
@@ -75,7 +75,7 @@ cps_sy1819$citywide <-
                             , polygon.boundaries = boundaries)
                             }
 
-\dontrun{
+\donttest{
 ## sf, multipolygon polygon example ## -----
 
 # load necessary package ----
@@ -91,7 +91,7 @@ boundaries <-
                        , labels = community_areas_sf$community)
 
 
-# identify the scools which lie within each of the 77 Chicago community areas -----
+# identify the schools which lie within each of the 77 Chicago community areas -----
 cps_sy1819$community <-
   LabelPointsWithinPolygons(lng = cps_sy1819$school_longitude
                             , lat = cps_sy1819$school_latitude

@@ -197,12 +197,11 @@
   <span class='fu'><a href='GetPolygonBoundaries.html'>GetPolygonBoundaries</a></span>(<span class='kw'>my.polygon</span> <span class='kw'>=</span> <span class='no'>community_areas_spdf</span>
                        , <span class='kw'>labels</span> <span class='kw'>=</span> <span class='no'>community_areas_spdf</span>$<span class='no'>community</span>)
 
-<span class='co'># identify the scools which lie within each of the 77 Chicago community areas -----</span>
+<span class='co'># identify the schools which lie within each of the 77 Chicago community areas -----</span>
 <span class='no'>cps_sy1819</span>$<span class='no'>community</span> <span class='kw'>&lt;-</span>
   <span class='fu'>LabelPointsWithinPolygons</span>(<span class='kw'>lng</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_longitude</span>
                             , <span class='kw'>lat</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_latitude</span>
-                            , <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)</div><span class='co'># NOT RUN {</span>
-<span class='co'>## sf, one polygon example ## -----</span>
+                            , <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)</div><div class='input'><span class='co'>## sf, one polygon example ## -----</span>
 
 <span class='co'># load necessary package ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>sf</span>)
@@ -219,11 +218,8 @@
 <span class='no'>cps_sy1819</span>$<span class='no'>citywide</span> <span class='kw'>&lt;-</span>
   <span class='fu'>LabelPointsWithinPolygons</span>(<span class='kw'>lng</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_longitude</span>
                             , <span class='kw'>lat</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_latitude</span>
-                            , <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)
-
-<span class='co'># }</span><div class='input'>
-</div><span class='co'># NOT RUN {</span>
-<span class='co'>## sf, multipolygon polygon example ## -----</span>
+                            , <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)</div><div class='input'>
+</div><div class='input'><span class='co'>## sf, multipolygon polygon example ## -----</span>
 
 <span class='co'># load necessary package ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>sf</span>)
@@ -238,12 +234,11 @@
                        , <span class='kw'>labels</span> <span class='kw'>=</span> <span class='no'>community_areas_sf</span>$<span class='no'>community</span>)
 
 
-<span class='co'># identify the scools which lie within each of the 77 Chicago community areas -----</span>
+<span class='co'># identify the schools which lie within each of the 77 Chicago community areas -----</span>
 <span class='no'>cps_sy1819</span>$<span class='no'>community</span> <span class='kw'>&lt;-</span>
   <span class='fu'>LabelPointsWithinPolygons</span>(<span class='kw'>lng</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_longitude</span>
                             , <span class='kw'>lat</span> <span class='kw'>=</span> <span class='no'>cps_sy1819</span>$<span class='no'>school_latitude</span>
-, <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)
-<span class='co'># }</span></pre>
+, <span class='kw'>polygon.boundaries</span> <span class='kw'>=</span> <span class='no'>boundaries</span>)</div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

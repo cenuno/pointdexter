@@ -163,7 +163,9 @@ Boundaries - Community Areas (current)</a>. The file was last updated on Decembe
 <span class='co'># load necessary data ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"community_areas_spdf"</span>)
 
-<span class='co'># plot all 77 community areas</span>
+<span class='co'># plot all 77 community areas -----</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>))
+
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/plot'>plot</a></span>(<span class='no'>community_areas_spdf</span>
      , <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"Chicago's 77 community areas"</span>
      , <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"gray85"</span>

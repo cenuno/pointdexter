@@ -4,18 +4,18 @@ pointdexter 0.1.0
 ## Resubmission
 In this version I have:
 
+* Replaced `\dontrun{}` with `\donttest{}` for all `sf` examples in the `.Rd` files.
+
 * Moved `sf` package from Suggests to Enhances in the DESCRIPTION file.
     + This allows the CRAN checks on r-hub to pass with 0 ERRORs, 0 WARNINGs, and 2 NOTEs.
 
 * Removed use of `sf` in the vignette. 
 
-* `sf` examples in the `.Rd` files will no longer be run, courtesy of `\dontrun{}`.
-
 * Removed GPL-3 LICENSE file and mention of it in the DESCRIPTION file.
 
 * Replaced `sf` URLs.
 
-* Replaced broken URLs in cps_sy1819.rd file.
+* Replaced broken URLs in `cps_sy1819.rd` file.
 
 ## Test environments
 

@@ -30,14 +30,16 @@ Boundaries - Community Areas (current)}. The file was last updated on December 1
 \href{https://r-spatial.github.io/sf/}{\code{sf}} documentation has helpful information on how to work with \code{sf} objects.
 }
 \examples{
-\dontrun{
+\donttest{
 # load necessary packages ----
 library(sf)
 
 # load necessary data ----
 data("community_areas_sf")
 
-# plot all 77 community areas
+# plot all 77 community areas -----
+par(mar = c(0, 0, 1, 0))
+
 plot(community_areas_sf$geometry
      , main = "Chicago's 77 community areas"
      , col = "gray85"

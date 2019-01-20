@@ -35,7 +35,9 @@ library(sp)
 # load necessary data ----
 data("community_areas_spdf")
 
-# plot all 77 community areas
+# plot all 77 community areas -----
+par(mar = c(0, 0, 1, 0))
+
 plot(community_areas_spdf
      , main = "Chicago's 77 community areas"
      , col = "gray85"

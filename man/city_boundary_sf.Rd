@@ -32,7 +32,7 @@ Boundaries - City}. The file was last updated on June 30, 2017.
 \href{https://r-spatial.github.io/sf/}{\code{sf}} documentation has helpful information on how to work with \code{sf} objects.
 }
 \examples{
-\dontrun{
+\donttest{
 # load necessary packages ----
 library(sf)
 
@@ -40,6 +40,8 @@ library(sf)
 data("city_boundary_sf")
 
 # plot Chicago ----
+par(mar = c(0, 0, 1, 0))
+
 plot(city_boundary_sf$geometry
      , main = "City of Chicago boundary"
      , col = "gray85"
