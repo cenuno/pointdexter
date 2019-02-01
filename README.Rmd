@@ -5,17 +5,19 @@ output: github_document
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r setup, include = FALSE}
-knitr::opts_chunk$set(
-  collapse = TRUE,
-  comment = "#>",
-  fig.path = "man/figures/README-",
-  out.width = "100%"
-)
+knitr::opts_chunk$set(collapse = TRUE
+                      , comment = "#>"
+                      , fig.path = "man/figures/README-"
+                      , out.width = "100%"
+                      , dpi = 300)
 ```
 
 # pointdexter <img src="man/figures/logo.png" align="right" alt="" width="140" />
 
 <!-- badges: start -->
+[![CRAN status](https://www.r-pkg.org/badges/version/pointdexter)](https://cran.r-project.org/package=pointdexter)
+[![CRAN checks](https://cranchecks.info/badges/worst/pointdexter)](https://cran.r-project.org/web/checks/check_results_pointdexter.html)
+[![CRAN Downloads](http://cranlogs.r-pkg.org/badges/pointdexter?color=brightgreen)](http://www.r-pkg.org/pkg/pointdexter)
 [![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter)
 <!-- badges: end -->
 
@@ -36,6 +38,12 @@ However, `pointdexter` also works with the [`sf`](https://www.rdocumentation.org
 > Depending on your operating system and available libraries, `sf` can be tricky to install the first time. The [`sf` website](https://r-spatial.github.io/sf/index.html#installing) is a good place to start if you're having trouble. If you're using macOS, [this is a good guide](https://medium.com/@jinwujour/mapping-with-r-on-mac-installation-8c8ef997c6c2) to installing the required libraries.
 
 ## Installation
+
+The latest stable release version can be installed from [CRAN](https://cran.r-project.org/package=pointdexter):
+
+```R
+install.packages("pointdexter")
+```
 
 Development versions can be installed from GitHub:
 

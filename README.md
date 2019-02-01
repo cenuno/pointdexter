@@ -4,7 +4,7 @@ pointdexter <img src="man/figures/logo.png" align="right" alt="" width="140" />
 ===============================================================================
 
 <!-- badges: start -->
-[![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter) <!-- badges: end -->
+[![CRAN status](https://www.r-pkg.org/badges/version/pointdexter)](https://cran.r-project.org/package=pointdexter) [![CRAN checks](https://cranchecks.info/badges/worst/pointdexter)](https://cran.r-project.org/web/checks/check_results_pointdexter.html) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/pointdexter?color=brightgreen)](http://www.r-pkg.org/pkg/pointdexter) [![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter) <!-- badges: end -->
 
 The `pointdexter` package labels longitudinal and latitudinal coordinates located inside a polygon.
 
@@ -26,6 +26,12 @@ However, `pointdexter` also works with the [`sf`](https://www.rdocumentation.org
 
 Installation
 ------------
+
+The latest stable release version can be installed from [CRAN](https://cran.r-project.org/package=pointdexter):
+
+``` r
+install.packages("pointdexter")
+```
 
 Development versions can be installed from GitHub:
 
