@@ -1,7 +1,7 @@
 #
 # Author:   Cristian E. Nuno
 # Purpose:  Export raw data sets as compressed .rda files
-# Date:     January 7, 2019
+# Date:     March 14, 2019
 #
 
 # load necessary packages ----
@@ -23,6 +23,9 @@ city_boundary_sf     <- read_sf("data-raw/chicago_city_boundary.geojson")
 cps_sy1819           <- read.csv("data-raw/chicago_public_schools_sy1819.csv"
                                  , stringsAsFactors = FALSE
                                  , na.strings = "")
+census_tracts_spdf   <- readOGR(dsn = "data-raw/chicago_2010_census_tracts.geojson"
+                                , stringsAsFactors = FALSE)
+census_tracts_sf     <- read_sf("data-raw/chicago_2010_census_tracts.geojson")
 
 # clean community_areas_spdf ----
 # note: all other columns but community & area number are either zero or irrelevant
@@ -171,5 +174,11 @@ save(city_boundary_sf
 save(cps_sy1819
      , file = "data/cps_sy1819.rda"
      , compress = "bzip2")
+save(census_tracts_spdf
+     , file = "data/census_tracts_spdf.rda"
+     , compress = "xz")
+save(census_tracts_sf
+     , file = "data/census_tracts_sf.rda"
+     , compress = "xz")
 
 # end of script #
