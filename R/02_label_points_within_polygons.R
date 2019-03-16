@@ -100,6 +100,9 @@ LabelPointsWithinPolygons <- function(lng
     names(temp)[names(temp) == "values"] <- "index"
     names(temp)[names(temp) == "ind"] <- "label"
 
+    # transfrom the label column from a factor to a character
+    temp$label <- as.character(temp$label)
+
     # test for points that don't exist in any of the polygons ----
     if (nrow(df) > nrow(temp)) {
 
