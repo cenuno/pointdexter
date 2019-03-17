@@ -1,3 +1,5 @@
 export(GetPolygonBoundaries)
 export(LabelPointsWithinPolygons)
+import(sp)
 import(splancs)
+importFrom("utils", "stack")

@@ -7,7 +7,7 @@ City boundary of Chicago
 \description{
 A simple feature containing the city boundary of Chicago that can only be used with the \href{https://r-spatial.github.io/sf/}{\code{sf}} package.
 }
-\usage{data("community_areas_sf")}
+\usage{data("city_boundary_sf")}
 \format{
   A simple feature (which is either \code{data.frame} or \code{tibble}) with a geometry list-column with 1 observation on the following 5 variables:
   \describe{
@@ -47,5 +47,10 @@ plot(city_boundary_sf$geometry
      , col = "gray85"
      , border = "dodgerblue4")
      }
+}
+\seealso{
+\itemize{
+\item \code{?pointdexter::city_boundary_spdf}
+}
 }
 \keyword{datasets}

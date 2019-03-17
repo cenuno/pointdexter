@@ -94,7 +94,7 @@ LabelPointsWithinPolygons <- function(lng
 
     # collapse the list of indices and polygon labels into one data frame
     # note: instances where no points were found in a polygon will be dropped
-    temp <- stack(temp)
+    temp <- utils::stack(temp)
 
     # rename columns
     names(temp)[names(temp) == "values"] <- "index"

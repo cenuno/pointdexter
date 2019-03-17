@@ -158,6 +158,17 @@ for (i in c("long_name", "summary", "administrator"
   Encoding(cps_sy1819[[i]]) <- "UTF-8"
 }
 
+# clean census tracts ----
+census_tracts_sf$notes <-
+  # replace "" with NA values in the notes column
+  ifelse(census_tracts_sf$notes == "", NA, census_tracts_sf$notes)
+
+census_tracts_spdf@data$notes <-
+  # replace "" with NA values in the notes column
+  ifelse(census_tracts_spdf@data$notes == ""
+         , NA
+         , census_tracts_spdf@data$notes)
+
 # export all objects as .rda files in data/ -----
 save(community_areas_spdf
      , file = "data/community_areas_spdf.rda"

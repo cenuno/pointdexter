@@ -13,7 +13,7 @@ The package is designed to work with both \href{https://r-spatial.github.io/sf/}
  \href{https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygonsDataFrame-class}{\code{SpatialPolygonsDataFrame}} objects.
 }
 \details{
-To learn more about dplyr, start with the vignette:
+To learn more about pointdexter, start with the vignette:
 \code{browseVignettes(package = "pointdexter")}
 }
 \section{pointdexter functions}{

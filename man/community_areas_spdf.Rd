@@ -13,15 +13,6 @@ A SpatialPolygonsDataFrame of Chicago's 77 community areas
   \describe{
     \item{\code{community}}{the name of each community area}
     \item{\code{area_numbe}}{the area number for each community(identical to \code{area_num_1})}
-
-  A SpatialPolygonsDataFrame contains additional information in other \href{https://www.rdocumentation.org/packages/methods/versions/3.5.1/topics/slot}{slots} that are accessed via both \code{community_areas_spdf@[slotName]} or \code{methods::slot(community_areas_spdf, "[slotName]")}:
-  \describe{
-    \item{\code{data}}{a data frame object that contains information for each polygon}
-    \item{\code{polygons}}{contains more slots related to each individual polygon. For more information, please see \href{https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/Polygon-class}{?sp::Polygon-class}, \href{https://www.rdocumentation.org/packages/sp/versions/1.2-5/topics/SpatialPolygons}{?sp::SpatialPolygons}, and the \href{https://stackoverflow.com/questions/8708681/getting-a-slots-value-of-s4-objects}{"Getting a slot’s value of S4 objects?" thread on Stack Overflow}}
-    \item{\code{plotOrder}}{an integer vector whose value states the order in which the polygons should be plotted}
-    \item{\code{bbox}}{2-column bounding box matrix holding the minimum coordinate values in the first column and maximum in the second for the longitude (first row), latitude (second row)}
-    \item{\code{proj4string}}{\href{https://cenuno.github.io/Label_Points_Inside_Polygons.html}{CRS} object that is used for unprojecting or reprojecting coordinates}
-  }
   }
 }
 \source{

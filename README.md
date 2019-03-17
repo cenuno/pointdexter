@@ -4,7 +4,7 @@ pointdexter <img src="man/figures/logo.png" align="right" alt="" width="140" />
 ===============================================================================
 
 <!-- badges: start -->
-[![CRAN status](https://www.r-pkg.org/badges/version/pointdexter)](https://cran.r-project.org/package=pointdexter) [![CRAN checks](https://cranchecks.info/badges/worst/pointdexter)](https://cran.r-project.org/web/checks/check_results_pointdexter.html) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/pointdexter?color=brightgreen)](http://www.r-pkg.org/pkg/pointdexter) [![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter) <!-- badges: end -->
+[![CRAN status](https://www.r-pkg.org/badges/version/pointdexter)](https://cran.r-project.org/package=pointdexter) [![CRAN checks](https://cranchecks.info/badges/worst/pointdexter)](https://cran.r-project.org/web/checks/check_results_pointdexter.html) [![CRAN Downloads](http://cranlogs.r-pkg.org/badges/pointdexter?color=brightgreen)](http://www.r-pkg.org/pkg/pointdexter) [![Rdoc](http://www.rdocumentation.org/badges/version/pointdexter)](http://www.rdocumentation.org/packages/pointdexter) [![Travis build status](https://travis-ci.org/cenuno/pointdexter.svg?branch=master)](https://travis-ci.org/cenuno/pointdexter) <!-- badges: end -->
 
 The `pointdexter` package labels longitudinal and latitudinal coordinates located inside a polygon.
 
@@ -36,6 +36,9 @@ install.packages("pointdexter")
 Development versions can be installed from GitHub:
 
 ``` r
+# note: by default, the development version is the master branch;
+#       however, that can be changed by changing the 
+#       value in the 'ref' argument
 remotes::install_github("cenuno/pointdexter")
 ```
 
@@ -52,6 +55,9 @@ Usage
     -   as a SpatialPolygonsDataFrame; and
     -   as a simple feature
 -   Chicago's [77 community areas](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6)
+    -   as a SpatialPolygonsDataFrame; and
+    -   as a simple feature
+-   Chicago's [2010 census tracts](https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Census-Tracts-2010/5jrd-6zik)
     -   as a SpatialPolygonsDataFrame; and
     -   as a simple feature
 
