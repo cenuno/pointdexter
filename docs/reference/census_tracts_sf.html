@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Chicago's 77 community areas — community_areas_sf • pointdexter</title>
+<title>A simple feature of the 2010 Chicago census tracts — census_tracts_sf • pointdexter</title>
 
 <!-- favicons -->
 <link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png">
@@ -37,9 +37,9 @@
 
 
 
-<meta property="og:title" content="Chicago's 77 community areas — community_areas_sf" />
+<meta property="og:title" content="A simple feature of the 2010 Chicago census tracts — census_tracts_sf" />
 
-<meta property="og:description" content="A simple feature of the 77 community area boundaries in Chicago that can only be used with the sf package." />
+<meta property="og:description" content="A simple feature containing the 2010 Chicago census tracts that can only be used with the sf package." />
 
 <meta property="og:image" content="/logo.png" />
 <meta name="twitter:card" content="summary" />
@@ -123,24 +123,31 @@
 <div class="row">
   <div class="col-md-9 contents">
     <div class="page-header">
-    <h1>Chicago's 77 community areas</h1>
+    <h1>A simple feature of the 2010 Chicago census tracts</h1>
     
-    <div class="hidden name"><code>community_areas_sf.Rd</code></div>
+    <div class="hidden name"><code>census_tracts_sf.Rd</code></div>
     </div>
 
     <div class="ref-description">
     
-    <p>A simple feature of the 77 community area boundaries in Chicago that can only be used with the <a href='https://r-spatial.github.io/sf/'><code>sf</code></a> package.</p>
+    <p>A simple feature containing the 2010 Chicago census tracts that can only be used with the <a href='https://r-spatial.github.io/sf/'><code>sf</code></a> package.</p>
     
     </div>
 
-    <pre class="usage"><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"community_areas_sf"</span>)</pre>
+    <pre class="usage"><span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"census_tracts_sf"</span>)</pre>
         
     <h2 class="hasAnchor" id="format"><a class="anchor" href="#format"></a>Format</h2>
 
-    <p>A simple feature (which is either <code>data.frame</code> or <code>tibble</code>) with a geometry list-column with 77 observations on the following 3 variables:</p><dl class='dl-horizontal'>
-    <dt><code>community</code></dt><dd><p>the name of each community area</p></dd>
-    <dt><code>area_numbe</code></dt><dd><p>the area number for each community(identical to <code>area_num_1</code>)</p></dd>
+    <p>A simple feature (which is either <code>data.frame</code> or <code>tibble</code>) with a geometry list-column with 801 observations on the following 10 variables:</p><dl class='dl-horizontal'>
+    <dt><code>statefp10</code></dt><dd><p>17, a 2-digit code from the American National Standards Institute/Federal Information Processing Standards (ANSI/FIPS) that represents the State of Illinois</p></dd>
+    <dt><code>name10</code></dt><dd><p>un-padded 3-to-6 digit (excluding the decimal point) name of the census tract</p></dd>
+    <dt><code>commarea_n</code></dt><dd><p>numeric name of the community area that the census tract lays within, which can be used as a crosswalk to identify particular census tracts in a given community area</p></dd>
+    <dt><code>namelsad10</code></dt><dd><p>character name of the census tract</p></dd>
+    <dt><code>commarea</code></dt><dd><p>numeric name of the community area that the census tract lays within, which can be used as a crosswalk to identify particular census tracts in a given community area</p></dd>
+    <dt><code>geoid10</code></dt><dd><p>11-digit code that unique identifies the census tract as a concatenation of <code>statefp10</code> (2-digits) + <code>countyfp10</code> (3-digits) + <code>tractce</code> (6-digits)</p></dd>
+    <dt><code>notes</code></dt><dd><p>not every census tract lays exactly within a community area which is where the City of Chicago made notes regarding instances of overlap, low population, or a census tract falling outside the City's boundaries</p></dd>
+    <dt><code>tractce10</code></dt><dd><p>padded 6-digit name of the census tract</p></dd>
+    <dt><code>countyfp10</code></dt><dd><p>3-digit county name for Cook County</p></dd>
     <dt><code>geometry</code></dt><dd><p>a list that contains the dimensions and the simple feature geometry type</p></dd>
   </dl>
     
@@ -151,8 +158,8 @@
     
     <h2 class="hasAnchor" id="source"><a class="anchor" href="#source"></a>Source</h2>
 
-    <p>This data frame comes from the City of Chicago Data Portal, <a href='https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6'>
-Boundaries - Community Areas (current)</a>. The file was last updated on December 18, 2018.</p>
+    <p>This <code>sf</code> object comes from the City of Chicago Data Portal, <a href='https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Census-Tracts-2010/5jrd-6zik'>
+Boundaries - Census Tracts - 2010</a>. The file was last updated on July 11, 2018.</p>
     
     <h2 class="hasAnchor" id="references"><a class="anchor" href="#references"></a>References</h2>
 
@@ -161,7 +168,7 @@ Boundaries - Community Areas (current)</a>. The file was last updated on Decembe
     <h2 class="hasAnchor" id="see-also"><a class="anchor" href="#see-also"></a>See also</h2>
 
     <div class='dont-index'><ul>
-<li><p><code><a href='community_areas_spdf.html'>?pointdexter::community_areas_spdf</a></code></p></li>
+<li><p><code><a href='census_tracts_spdf.html'>?pointdexter::census_tracts_spdf</a></code></p></li>
 </ul></div>
     
 
@@ -170,15 +177,15 @@ Boundaries - Community Areas (current)</a>. The file was last updated on Decembe
 <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/library'>library</a></span>(<span class='no'>sf</span>)
 
 <span class='co'># load necessary data ----</span>
-<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"community_areas_sf"</span>)
+<span class='fu'><a href='https://www.rdocumentation.org/packages/utils/topics/data'>data</a></span>(<span class='st'>"census_tracts_sf"</span>)
 
-<span class='co'># plot all 77 community areas -----</span>
+<span class='co'># plot Chicago 2010 census tracts ----</span>
 <span class='fu'><a href='https://www.rdocumentation.org/packages/graphics/topics/par'>par</a></span>(<span class='kw'>mar</span> <span class='kw'>=</span> <span class='fu'><a href='https://www.rdocumentation.org/packages/base/topics/c'>c</a></span>(<span class='fl'>0</span>, <span class='fl'>0</span>, <span class='fl'>1</span>, <span class='fl'>0</span>))
 
-<span class='fu'><a href='https://www.rdocumentation.org/packages/sf/topics/plot'>plot</a></span>(<span class='no'>community_areas_sf</span>$<span class='no'>geometry</span>
-     , <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"Chicago's 77 community areas"</span>
+<span class='fu'><a href='https://www.rdocumentation.org/packages/sf/topics/plot'>plot</a></span>(<span class='no'>census_tracts_sf</span>$<span class='no'>geometry</span>
+     , <span class='kw'>main</span> <span class='kw'>=</span> <span class='st'>"2010 City of Chicago census tracts"</span>
      , <span class='kw'>col</span> <span class='kw'>=</span> <span class='st'>"gray85"</span>
-     , <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"dodgerblue4"</span>)</div><div class='img'><img src='community_areas_sf-1.png' alt='' width='700' height='433' /></div><div class='input'>     </div></pre>
+     , <span class='kw'>border</span> <span class='kw'>=</span> <span class='st'>"dodgerblue4"</span>)</div><div class='img'><img src='census_tracts_sf-1.png' alt='' width='700' height='433' /></div><div class='input'>     </div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>

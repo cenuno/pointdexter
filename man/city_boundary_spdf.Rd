@@ -5,7 +5,7 @@
 A SpatialPolygonsDataFrame of the city boundary of Chicago
 }
 \description{
-A SpatialPolygonsDataFrame of the city boundary of Chicago that can only be used with the \href{https://www.rdocumentation.org/packages/sp/versions/1.3-1}{\code{sp}} and \href{https://www.rdocumentation.org/packages/rgdal/versions/1.3-6}{\code{rgdal}} packages.
+A SpatialPolygonsDataFrame of the city boundary of Chicago that can only be used with the \href{https://www.rdocumentation.org/packages/sp/versions/1.3-1}{\code{sp}} package.
 }
 \usage{data("city_boundary_spdf")}
 \format{

@@ -1,7 +1,7 @@
 #
 # Author:   Cristian E. Nuno
 # Purpose:  Export raw data sets as compressed .rda files
-# Date:     January 7, 2019
+# Date:     March 14, 2019
 #
 
 # load necessary packages ----
@@ -23,6 +23,9 @@ city_boundary_sf     <- read_sf("data-raw/chicago_city_boundary.geojson")
 cps_sy1819           <- read.csv("data-raw/chicago_public_schools_sy1819.csv"
                                  , stringsAsFactors = FALSE
                                  , na.strings = "")
+census_tracts_spdf   <- readOGR(dsn = "data-raw/chicago_2010_census_tracts.geojson"
+                                , stringsAsFactors = FALSE)
+census_tracts_sf     <- read_sf("data-raw/chicago_2010_census_tracts.geojson")
 
 # clean community_areas_spdf ----
 # note: all other columns but community & area number are either zero or irrelevant
@@ -155,6 +158,17 @@ for (i in c("long_name", "summary", "administrator"
   Encoding(cps_sy1819[[i]]) <- "UTF-8"
 }
 
+# clean census tracts ----
+census_tracts_sf$notes <-
+  # replace "" with NA values in the notes column
+  ifelse(census_tracts_sf$notes == "", NA, census_tracts_sf$notes)
+
+census_tracts_spdf@data$notes <-
+  # replace "" with NA values in the notes column
+  ifelse(census_tracts_spdf@data$notes == ""
+         , NA
+         , census_tracts_spdf@data$notes)
+
 # export all objects as .rda files in data/ -----
 save(community_areas_spdf
      , file = "data/community_areas_spdf.rda"
@@ -171,5 +185,11 @@ save(city_boundary_sf
 save(cps_sy1819
      , file = "data/cps_sy1819.rda"
      , compress = "bzip2")
+save(census_tracts_spdf
+     , file = "data/census_tracts_spdf.rda"
+     , compress = "xz")
+save(census_tracts_sf
+     , file = "data/census_tracts_sf.rda"
+     , compress = "xz")
 
 # end of script #

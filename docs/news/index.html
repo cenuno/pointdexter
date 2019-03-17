@@ -70,7 +70,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="../index.html">pointdexter</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -125,6 +125,20 @@
       <small>Source: <a href='https://github.com/cenuno/pointdexter/blob/master/NEWS.md'><code>NEWS.md</code></a></small>
     </div>
 
+    <div id="pointdexter-0-1-1" class="section level1">
+<h1 class="page-header">
+<a href="#pointdexter-0-1-1" class="anchor"></a>pointdexter 0.1.1<small> Unreleased </small>
+</h1>
+<ul>
+<li>Added 2010 Chicago census tracts as built-in data sets as both <code>sf</code> and <code>SpatialPolygonDataFrame</code> objects</li>
+<li>Fixed an error where <code><a href="../reference/LabelPointsWithinPolygons.html">LabelPointsWithinPolygons()</a></code> failed when no point(s) lay within a polygon.
+<ul>
+<li>By using smaller geographies (i.e. <a href="https://www.census.gov/geo/reference/gtc/gtc_ct.html">census tracts</a>) rather than larger ones (i.e. <a href="http://www.encyclopedia.chicagohistory.org/pages/319.html">community areas</a>), <code>pointdexter</code>’s 0.1.0 method of labeling did not account for instances where a polygon has no points laying inside of it.</li>
+<li>Resolved by storing the results of <a href="https://www.rdocumentation.org/packages/splancs/versions/2.01-40/topics/inpip"><code><a href="https://www.rdocumentation.org/packages/splancs/topics/inpip">splancs::inpip()</a></code></a> for each polygon as a named integer vector in a list rather than in a data frame.</li>
+</ul>
+</li>
+</ul>
+</div>
     <div id="pointdexter-0-1-0" class="section level1">
 <h1 class="page-header">
 <a href="#pointdexter-0-1-0" class="anchor"></a>pointdexter 0.1.0<small> 2019-01-30 </small>
@@ -139,6 +153,7 @@
     <div id="tocnav">
       <h2>Contents</h2>
       <ul class="nav nav-pills nav-stacked">
+        <li><a href="#pointdexter-0-1-1">0.1.1</a></li>
         <li><a href="#pointdexter-0-1-0">0.1.0</a></li>
       </ul>
     </div>

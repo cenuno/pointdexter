@@ -1,7 +1,7 @@
 #
 # Author:   Cristian E. Nuno
 # Purpose:  Label points within polygons
-# Date:     December 27, 2018
+# Date:     March 14, 2019
 #
 
 # create LabelPointsWithinPolygons() function -----
@@ -81,20 +81,27 @@ LabelPointsWithinPolygons <- function(lng
                             , poly = polygon.boundaries
                             , bound = NULL))
   } else {
-    # return a character vector that identify which points lie inside each coordinate pair matrix ----
+    # identify which points lie inside each coordinate pair matrix ----
     temp <-
-      mapply(FUN = function(i, j)
-        data.frame(index = splancs::inpip(pts = df
-                                          , poly = i
-                                          , bound = NULL)
-                   , label = j
-                   , stringsAsFactors = FALSE)
-        , polygon.boundaries
-        , names(polygon.boundaries)
-        , SIMPLIFY = FALSE)
+      lapply(X = polygon.boundaries
+             , FUN = function(i)
+               splancs::inpip(pts = df
+                              , poly = i
+                              , bound = NULL))
 
-    # collapse the list into one data frame
-    temp <- do.call(what = "rbind", args = temp)
+    # name elements in temp
+    names(temp) <- names(polygon.boundaries)
+
+    # collapse the list of indices and polygon labels into one data frame
+    # note: instances where no points were found in a polygon will be dropped
+    temp <- utils::stack(temp)
+
+    # rename columns
+    names(temp)[names(temp) == "values"] <- "index"
+    names(temp)[names(temp) == "ind"] <- "label"
+
+    # transfrom the label column from a factor to a character
+    temp$label <- as.character(temp$label)
 
     # test for points that don't exist in any of the polygons ----
     if (nrow(df) > nrow(temp)) {

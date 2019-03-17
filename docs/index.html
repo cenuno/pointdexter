@@ -39,7 +39,7 @@
       </button>
       <span class="navbar-brand">
         <a class="navbar-link" href="index.html">pointdexter</a>
-        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.0</span>
+        <span class="version label label-default" data-toggle="tooltip" data-placement="bottom" title="Released version">0.1.1</span>
       </span>
     </div>
 
@@ -121,7 +121,10 @@
 <p>The latest stable release version can be installed from <a href="https://cran.r-project.org/package=pointdexter">CRAN</a>:</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw"><a href="https://www.rdocumentation.org/packages/utils/topics/install.packages">install.packages</a></span>(<span class="st">"pointdexter"</span>)</code></pre></div>
 <p>Development versions can be installed from GitHub:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"cenuno/pointdexter"</span>)</code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># note: by default, the development version is the master branch;</span>
+<span class="co">#       however, that can be changed by changing the </span>
+<span class="co">#       value in the 'ref' argument</span>
+remotes<span class="op">::</span><span class="kw"><a href="https://www.rdocumentation.org/packages/remotes/topics/install_github">install_github</a></span>(<span class="st">"cenuno/pointdexter"</span>)</code></pre></div>
 </div>
 <div id="usage" class="section level2">
 <h2 class="hasAnchor">
@@ -143,6 +146,12 @@
 </ul>
 </li>
 <li>Chicago’s <a href="https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Community-Areas-current-/cauq-8yn6">77 community areas</a>
+<ul>
+<li>as a SpatialPolygonsDataFrame; and</li>
+<li>as a simple feature</li>
+</ul>
+</li>
+<li>Chicago’s <a href="https://data.cityofchicago.org/Facilities-Geographic-Boundaries/Boundaries-Census-Tracts-2010/5jrd-6zik">2010 census tracts</a>
 <ul>
 <li>as a SpatialPolygonsDataFrame; and</li>
 <li>as a simple feature</li>
@@ -453,6 +462,7 @@ relevant.columns &lt;-
 <li><a href="https://cran.r-project.org/package=pointdexter"><img src="https://www.r-pkg.org/badges/version/pointdexter" alt="CRAN status"></a></li>
 <li><a href="https://cran.r-project.org/web/checks/check_results_pointdexter.html"><img src="https://cranchecks.info/badges/worst/pointdexter" alt="CRAN checks"></a></li>
 <li><a href="http://www.r-pkg.org/pkg/pointdexter"><img src="http://cranlogs.r-pkg.org/badges/pointdexter?color=brightgreen" alt="CRAN Downloads"></a></li>
+<li><a href="http://www.rdocumentation.org/packages/pointdexter"><img src="http://www.rdocumentation.org/badges/version/pointdexter" alt="Rdoc"></a></li>
 <li><a href="https://travis-ci.org/cenuno/pointdexter"><img src="https://travis-ci.org/cenuno/pointdexter.svg?branch=master" alt="Travis build status"></a></li>
 </ul>
 </div>
